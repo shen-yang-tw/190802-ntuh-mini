@@ -1,0 +1,3124 @@
+@import 'functions', 'variables', 'mixin';
+
+/*---------- Text ------------------------------*/
+// @include google-font("Noto+Sans+TC:100,300,400,500,700,900|Noto+Serif+TC|Poppins|Material+Icons");
+// @include google-font("Noto+Sans+TC:100,300,400,500,700,900");
+// * {font-family:map-get($font, 'cht-hei');}
+html {
+  font-size:$fontsize;
+  &#{$text-m} {font-size:$fontsize-m;};
+  &#{$text-l} {font-size:$fontsize-l;};
+}
+body {
+  background-color:$color-body-bg;
+  font-weight:$fontwight;
+  * {
+    font-family:$font-cht;
+    // font-family:$font-cht-hei;
+    line-height:$line-height;
+  }
+  // *#{$uk-icon-exclude} {
+  //   color:$color-text;
+  // }
+}
+#{$fa}#{$fa-exclude} {font-family:$font-fa;}
+#{$mi} {font-family:$font-mi;}
+
+// #{$base-text} {
+//   overflow-wrap:break-word; word-wrap:break-word;
+//   &#{$not-bg} {line-height:$line-height;}
+// }
+#{$small-text} {
+  font-size:$fontsize-s;
+  #{$text-m} & {font-size:calc(#{strip-unit($font-base)}rem/#{$fontsize-m-integer})}
+  #{$text-l} & {font-size:calc(#{strip-unit($font-base)+2}rem/#{$fontsize-l-integer})}
+}
+
+@include min-max($selector:$font-size-name, $percent:10, $min:0.1, $max:6, $step:0.1, $property:true, $property-name:font-size, $unit:true);
+@include min-max($selector:$font-size-name, $percent:10, $min:0.1, $max:6, $step:0.1, $property:true, $property-name:font-size, $unit:true, $important:true);
+@include min-max($selector:$font-size-name, $percent:10, $min:0.1, $max:6, $step:0.1, $property:true, $property-name:font-size, $unit:true);
+@include min-max($selector:$font-size-name, $percent:10, $min:0.1, $max:6, $step:0.1, $property:true, $property-name:font-size, $unit:true, $important:true);
+@include min-max($selector:$font-size-name, $percent:10, $min:0.1, $max:6, $step:0.1, $property:true, $property-name:font-size, $unit:true);
+@include min-max($selector:$font-size-name, $percent:10, $min:0.1, $max:6, $step:0.1, $property:true, $property-name:font-size, $unit:true, $important:true);
+@include min-max($selector:$font-weight-name, $min:100, $max:900, $step:100, $property:true, $property-name:font-weight);
+#{$line-normal} {line-height:$line-normal-val;}
+@include min-max($selector:$line-height-name, $min:10, $max:50, $property:true, $property-name:line-height, $unit:true, $unit-val:px);
+@include min-max($selector:$line-height-name, $min:10, $max:50, $property:true, $property-name:line-height, $unit:true, $unit-val:px, $suffix:">*");
+
+/*uk-@s*/
+@media (min-width:640px) {
+  @include min-max($selector:$font-size-name, $percent:10, $min:0.1, $max:6, $step:0.1, $property:true, $property-name:font-size, $unit:true, $media:\@s);
+  @include min-max($selector:$font-weight-name, $min:100, $max:900, $step:100, $property:true, $property-name:font-weight, $media:\@s);
+  #{$line-normal}\@s {line-height:$line-normal-val;}
+  @include min-max($selector:$line-height-name, $min:10, $max:50, $property:true, $property-name:line-height, $unit:true, $unit-val:px, $media:\@s);
+}
+
+/*uk-@m*/
+@media (min-width:960px) {
+  @include min-max($selector:$font-size-name, $percent:10, $min:0.1, $max:6, $step:0.1, $property:true, $property-name:font-size, $unit:true, $media:\@m);
+  @include min-max($selector:$font-weight-name, $min:100, $max:900, $step:100, $property:true, $property-name:font-weight, $media:\@m);
+  #{$line-normal}\@m {line-height:$line-normal-val;}
+  @include min-max($selector:$line-height-name, $min:10, $max:50, $property:true, $property-name:line-height, $unit:true, $unit-val:px, $media:\@m);
+}
+
+/*uk-@l*/
+@media (min-width:1200px) {
+  @include min-max($selector:$font-size-name, $percent:10, $min:0.1, $max:6, $step:0.1, $property:true, $property-name:font-size, $unit:true, $media:\@l);
+  @include min-max($selector:$font-weight-name, $min:100, $max:900, $step:100, $property:true, $property-name:font-weight, $media:\@l);
+  #{$line-normal}\@l {line-height:$line-normal-val;}
+  @include min-max($selector:$line-height-name, $min:10, $max:50, $property:true, $property-name:line-height, $unit:true, $unit-val:px, $media:\@l);
+}
+
+/*uk-@xl*/
+@media (min-width:1600px) {
+  @include min-max($selector:$font-size-name, $percent:10, $min:0.1, $max:6, $step:0.1, $property:true, $property-name:font-size, $unit:true, $media:\@xl);
+  @include min-max($selector:$font-weight-name, $min:100, $max:900, $step:100, $property:true, $property-name:font-weight, $media:\@xl);
+  #{$line-normal}\@xl {line-height:$line-normal-val;}
+  @include min-max($selector:$line-height-name, $min:10, $max:50, $property:true, $property-name:line-height, $unit:true, $unit-val:px, $media:\@xl);
+}
+
+/*---------- Google Fonts ------------------------------*/
+#{$font-eng-name} {font-family:$font-eng;}
+
+/*---------- Link ------------------------------*/
+a, button {
+  &#{$color-exclude}, &#{$color-exclude}:visited, &#{$color-exclude}:focus, nav &#{$color-exclude} {color:$color-link;}
+  &#{$color-exclude}:hover, &#{$color-exclude}:hover * {color:$color-link-hover;}
+}
+
+/* Remove outline for non-keyboard :focus */
+*:focus {outline: none;}
+button:focus {background-color: inherit;} //fix Materialize
+/* Optional: Customize Class .focus-visible */
+#{$focus-visible}, a:focus, button:focus {@include focus($important:true)}
+
+#{$link-line}, #{$link-line}>* {text-decoration: underline;}
+#{$link-line}:hover, #{$link-line}:hover>*, #{$mc-underline}:hover, #{$mc-underline}:hover>* {text-decoration: none}
+
+/*---------- Button ------------------------------*/
+#{$button} {opacity: 0.7; &:hover {opacity: 1;}}
+
+/*---------- Long words wrap (Parent tag CANNOT be inline-block or flex) ------------------------------*/
+#{$url-fix} {
+  @include break-word;
+  >*:not(table) {display:inline !important;}
+}
+
+/*---------- Color ------------------------------*/
+#{$text-shadow-black} {text-shadow: 0px 1px 2px #000000;}
+#{$text-color-white}, #{$text-color-white}>*, #{$hover}\:#{str-slice($text-color-white, 2, -1)}:hover, #{$hover}\:#{str-slice($text-color-white, 2, -1)}:hover * {color:white;}
+#{$text-color-black}, #{$text-color-black}>*, #{$hover}\:#{str-slice($text-color-black, 2, -1)}:hover, #{$hover}\:#{str-slice($text-color-black, 2, -1)}:hover * {color:black;}
+#{$text-color-default}, #{$text-color-default}>* {color:$color-text;}
+#{$text-color-dark}, #{$text-color-dark}>* {color:$color-text-dark;}
+#{$text-color-grey}, #{$text-color-grey}>* {color:$color-text-grey;}
+#{$text-color-grey}#{$disabled}, #{$text-color-grey}#{$disabled}>* {color:$color-grey;}
+#{$text-color-white}\!, #{$text-color-white}\!>*, #{$hover}\:#{str-slice($text-color-white, 2, -1)}\!:hover, #{$hover}\:#{str-slice($text-color-white, 2, -1)}\!:hover * {color:white !important;}
+#{$text-color-black}\!, #{$text-color-black}\!>*, #{$hover}\:#{str-slice($text-color-black, 2, -1)}\!:hover, #{$hover}\:#{str-slice($text-color-black, 2, -1)}\!:hover * {color:black !important;}
+#{$text-color-default}\!, #{$text-color-default}\!>* {color:$color-text !important;}
+#{$text-color-dark}\!, #{$text-color-dark}\!>* {color:$color-text-dark !important;}
+#{$text-color-grey}\!, #{$text-color-grey}\!>* {color:$color-text-grey !important;}
+#{$text-grey-100} {color:$color-grey-100;}
+#{$text-grey-200} {color:$color-grey-200;}
+#{$text-grey-300} {color:$color-grey-300;}
+#{$text-grey-400} {color:$color-grey-400;}
+#{$text-grey-500} {color:$color-grey-500;}
+#{$text-grey-600} {color:$color-grey-600;}
+#{$text-grey-700} {color:$color-grey-700;}
+#{$text-grey-800} {color:$color-grey-800;}
+#{$text-grey-900} {color:$color-grey-900;}
+#{$text-bluegrey-100} {color:$color-bluegrey-100;}
+#{$text-bluegrey-200} {color:$color-bluegrey-200;}
+#{$text-bluegrey-300} {color:$color-bluegrey-300;}
+#{$text-bluegrey-400} {color:$color-bluegrey-400;}
+#{$text-bluegrey-500} {color:$color-bluegrey-500;}
+#{$text-bluegrey-600} {color:$color-bluegrey-600;}
+#{$text-bluegrey-700} {color:$color-bluegrey-700;}
+#{$text-bluegrey-800} {color:$color-bluegrey-800;}
+#{$text-bluegrey-900} {color:$color-bluegrey-900;}
+#{$text-red-100} {color:$color-red-100;}
+#{$text-red-200} {color:$color-red-200;}
+#{$text-red-300} {color:$color-red-300;}
+#{$text-red-400} {color:$color-red-400;}
+#{$text-red-500} {color:$color-red-500;}
+#{$text-red-600} {color:$color-red-600;}
+#{$text-red-700} {color:$color-red-700;}
+#{$text-red-800} {color:$color-red-800;}
+#{$text-red-900} {color:$color-red-900;}
+#{$text-orange-100} {color:$color-orange-100;}
+#{$text-orange-200} {color:$color-orange-200;}
+#{$text-orange-300} {color:$color-orange-300;}
+#{$text-orange-400} {color:$color-orange-400;}
+#{$text-orange-500} {color:$color-orange-500;}
+#{$text-orange-600} {color:$color-orange-600;}
+#{$text-orange-700} {color:$color-orange-700;}
+#{$text-orange-800} {color:$color-orange-800;}
+#{$text-orange-900} {color:$color-orange-900;}
+#{$text-yellow-100} {color:$color-yellow-100;}
+#{$text-yellow-200} {color:$color-yellow-200;}
+#{$text-yellow-300} {color:$color-yellow-300;}
+#{$text-yellow-400} {color:$color-yellow-400;}
+#{$text-yellow-500} {color:$color-yellow-500;}
+#{$text-yellow-600} {color:$color-yellow-600;}
+#{$text-yellow-700} {color:$color-yellow-700;}
+#{$text-yellow-800} {color:$color-yellow-800;}
+#{$text-yellow-900} {color:$color-yellow-900;}
+#{$text-green-100} {color:$color-green-100;}
+#{$text-green-200} {color:$color-green-200;}
+#{$text-green-300} {color:$color-green-300;}
+#{$text-green-400} {color:$color-green-400;}
+#{$text-green-500} {color:$color-green-500;}
+#{$text-green-600} {color:$color-green-600;}
+#{$text-green-700} {color:$color-green-700;}
+#{$text-green-800} {color:$color-green-800;}
+#{$text-green-900} {color:$color-green-900;}
+#{$text-teal-100} {color:$color-teal-100;}
+#{$text-teal-200} {color:$color-teal-200;}
+#{$text-teal-300} {color:$color-teal-300;}
+#{$text-teal-400} {color:$color-teal-400;}
+#{$text-teal-500} {color:$color-teal-500;}
+#{$text-teal-600} {color:$color-teal-600;}
+#{$text-teal-700} {color:$color-teal-700;}
+#{$text-teal-800} {color:$color-teal-800;}
+#{$text-teal-900} {color:$color-teal-900;}
+#{$text-blue-100} {color:$color-blue-100;}
+#{$text-blue-200} {color:$color-blue-200;}
+#{$text-blue-300} {color:$color-blue-300;}
+#{$text-blue-400} {color:$color-blue-400;}
+#{$text-blue-500} {color:$color-blue-500;}
+#{$text-blue-600} {color:$color-blue-600;}
+#{$text-blue-700} {color:$color-blue-700;}
+#{$text-blue-800} {color:$color-blue-800;}
+#{$text-blue-900} {color:$color-blue-900;}
+#{$text-indigo-100} {color:$color-indigo-100;}
+#{$text-indigo-200} {color:$color-indigo-200;}
+#{$text-indigo-300} {color:$color-indigo-300;}
+#{$text-indigo-400} {color:$color-indigo-400;}
+#{$text-indigo-500} {color:$color-indigo-500;}
+#{$text-indigo-600} {color:$color-indigo-600;}
+#{$text-indigo-700} {color:$color-indigo-700;}
+#{$text-indigo-800} {color:$color-indigo-800;}
+#{$text-indigo-900} {color:$color-indigo-900;}
+#{$text-purple-100} {color:$color-purple-100;}
+#{$text-purple-200} {color:$color-purple-200;}
+#{$text-purple-300} {color:$color-purple-300;}
+#{$text-purple-400} {color:$color-purple-400;}
+#{$text-purple-500} {color:$color-purple-500;}
+#{$text-purple-600} {color:$color-purple-600;}
+#{$text-purple-700} {color:$color-purple-700;}
+#{$text-purple-800} {color:$color-purple-800;}
+#{$text-purple-900} {color:$color-purple-900;}
+#{$text-pink-100} {color:$color-pink-100;}
+#{$text-pink-200} {color:$color-pink-200;}
+#{$text-pink-300} {color:$color-pink-300;}
+#{$text-pink-400} {color:$color-pink-400;}
+#{$text-pink-500} {color:$color-pink-500;}
+#{$text-pink-600} {color:$color-pink-600;}
+#{$text-pink-700} {color:$color-pink-700;}
+#{$text-pink-800} {color:$color-pink-800;}
+#{$text-pink-900} {color:$color-pink-900;}
+
+@include bg-color($selector:$bg-white, $bg-color:$color-white);
+@include bg-color($selector:$bg-black, $bg-color:$color-black);
+@include bg-color($selector:$bg-dark, $bg-color:$color-dark);
+@include bg-color($selector:$bg-grey, $bg-color:$color-grey);
+@include bg-color($selector:$bg-grey-100, $bg-color:$color-grey-100);
+@include bg-color($selector:$bg-grey-200, $bg-color:$color-grey-200);
+@include bg-color($selector:$bg-grey-300, $bg-color:$color-grey-300);
+@include bg-color($selector:$bg-grey-400, $bg-color:$color-grey-400);
+@include bg-color($selector:$bg-grey-500, $bg-color:$color-grey-500);
+@include bg-color($selector:$bg-grey-600, $bg-color:$color-grey-600);
+@include bg-color($selector:$bg-grey-700, $bg-color:$color-grey-700);
+@include bg-color($selector:$bg-grey-800, $bg-color:$color-grey-800);
+@include bg-color($selector:$bg-grey-900, $bg-color:$color-grey-900);
+@include bg-color($selector:$bg-bluegrey-100, $bg-color:$color-bluegrey-100);
+@include bg-color($selector:$bg-bluegrey-200, $bg-color:$color-bluegrey-200);
+@include bg-color($selector:$bg-bluegrey-300, $bg-color:$color-bluegrey-300);
+@include bg-color($selector:$bg-bluegrey-400, $bg-color:$color-bluegrey-400);
+@include bg-color($selector:$bg-bluegrey-500, $bg-color:$color-bluegrey-500);
+@include bg-color($selector:$bg-bluegrey-600, $bg-color:$color-bluegrey-600);
+@include bg-color($selector:$bg-bluegrey-700, $bg-color:$color-bluegrey-700);
+@include bg-color($selector:$bg-bluegrey-800, $bg-color:$color-bluegrey-800);
+@include bg-color($selector:$bg-bluegrey-900, $bg-color:$color-bluegrey-900);
+@include bg-color($selector:$bg-red-100, $bg-color:$color-red-100);
+@include bg-color($selector:$bg-red-200, $bg-color:$color-red-200);
+@include bg-color($selector:$bg-red-300, $bg-color:$color-red-300);
+@include bg-color($selector:$bg-red-400, $bg-color:$color-red-400);
+@include bg-color($selector:$bg-red-500, $bg-color:$color-red-500);
+@include bg-color($selector:$bg-red-600, $bg-color:$color-red-600);
+@include bg-color($selector:$bg-red-700, $bg-color:$color-red-700);
+@include bg-color($selector:$bg-red-800, $bg-color:$color-red-800);
+@include bg-color($selector:$bg-red-900, $bg-color:$color-red-900);
+@include bg-color($selector:$bg-orange-100, $bg-color:$color-orange-100);
+@include bg-color($selector:$bg-orange-200, $bg-color:$color-orange-200);
+@include bg-color($selector:$bg-orange-300, $bg-color:$color-orange-300);
+@include bg-color($selector:$bg-orange-400, $bg-color:$color-orange-400);
+@include bg-color($selector:$bg-orange-500, $bg-color:$color-orange-500);
+@include bg-color($selector:$bg-orange-600, $bg-color:$color-orange-600);
+@include bg-color($selector:$bg-orange-700, $bg-color:$color-orange-700);
+@include bg-color($selector:$bg-orange-800, $bg-color:$color-orange-800);
+@include bg-color($selector:$bg-orange-900, $bg-color:$color-orange-900);
+@include bg-color($selector:$bg-yellow-100, $bg-color:$color-yellow-100);
+@include bg-color($selector:$bg-yellow-200, $bg-color:$color-yellow-200);
+@include bg-color($selector:$bg-yellow-300, $bg-color:$color-yellow-300);
+@include bg-color($selector:$bg-yellow-400, $bg-color:$color-yellow-400);
+@include bg-color($selector:$bg-yellow-500, $bg-color:$color-yellow-500);
+@include bg-color($selector:$bg-yellow-600, $bg-color:$color-yellow-600);
+@include bg-color($selector:$bg-yellow-700, $bg-color:$color-yellow-700);
+@include bg-color($selector:$bg-yellow-800, $bg-color:$color-yellow-800);
+@include bg-color($selector:$bg-yellow-900, $bg-color:$color-yellow-900);
+@include bg-color($selector:$bg-green-100, $bg-color:$color-green-100);
+@include bg-color($selector:$bg-green-200, $bg-color:$color-green-200);
+@include bg-color($selector:$bg-green-300, $bg-color:$color-green-300);
+@include bg-color($selector:$bg-green-400, $bg-color:$color-green-400);
+@include bg-color($selector:$bg-green-500, $bg-color:$color-green-500);
+@include bg-color($selector:$bg-green-600, $bg-color:$color-green-600);
+@include bg-color($selector:$bg-green-700, $bg-color:$color-green-700);
+@include bg-color($selector:$bg-green-800, $bg-color:$color-green-800);
+@include bg-color($selector:$bg-green-900, $bg-color:$color-green-900);
+@include bg-color($selector:$bg-teal-100, $bg-color:$color-teal-100);
+@include bg-color($selector:$bg-teal-200, $bg-color:$color-teal-200);
+@include bg-color($selector:$bg-teal-300, $bg-color:$color-teal-300);
+@include bg-color($selector:$bg-teal-400, $bg-color:$color-teal-400);
+@include bg-color($selector:$bg-teal-500, $bg-color:$color-teal-500);
+@include bg-color($selector:$bg-teal-600, $bg-color:$color-teal-600);
+@include bg-color($selector:$bg-teal-700, $bg-color:$color-teal-700);
+@include bg-color($selector:$bg-teal-800, $bg-color:$color-teal-800);
+@include bg-color($selector:$bg-teal-900, $bg-color:$color-teal-900);
+@include bg-color($selector:$bg-blue-100, $bg-color:$color-blue-100);
+@include bg-color($selector:$bg-blue-200, $bg-color:$color-blue-200);
+@include bg-color($selector:$bg-blue-300, $bg-color:$color-blue-300);
+@include bg-color($selector:$bg-blue-400, $bg-color:$color-blue-400);
+@include bg-color($selector:$bg-blue-500, $bg-color:$color-blue-500);
+@include bg-color($selector:$bg-blue-600, $bg-color:$color-blue-600);
+@include bg-color($selector:$bg-blue-700, $bg-color:$color-blue-700);
+@include bg-color($selector:$bg-blue-800, $bg-color:$color-blue-800);
+@include bg-color($selector:$bg-blue-900, $bg-color:$color-blue-900);
+@include bg-color($selector:$bg-indigo-100, $bg-color:$color-indigo-100);
+@include bg-color($selector:$bg-indigo-200, $bg-color:$color-indigo-200);
+@include bg-color($selector:$bg-indigo-300, $bg-color:$color-indigo-300);
+@include bg-color($selector:$bg-indigo-400, $bg-color:$color-indigo-400);
+@include bg-color($selector:$bg-indigo-500, $bg-color:$color-indigo-500);
+@include bg-color($selector:$bg-indigo-600, $bg-color:$color-indigo-600);
+@include bg-color($selector:$bg-indigo-700, $bg-color:$color-indigo-700);
+@include bg-color($selector:$bg-indigo-800, $bg-color:$color-indigo-800);
+@include bg-color($selector:$bg-indigo-900, $bg-color:$color-indigo-900);
+@include bg-color($selector:$bg-purple-100, $bg-color:$color-purple-100);
+@include bg-color($selector:$bg-purple-200, $bg-color:$color-purple-200);
+@include bg-color($selector:$bg-purple-300, $bg-color:$color-purple-300);
+@include bg-color($selector:$bg-purple-400, $bg-color:$color-purple-400);
+@include bg-color($selector:$bg-purple-500, $bg-color:$color-purple-500);
+@include bg-color($selector:$bg-purple-600, $bg-color:$color-purple-600);
+@include bg-color($selector:$bg-purple-700, $bg-color:$color-purple-700);
+@include bg-color($selector:$bg-purple-800, $bg-color:$color-purple-800);
+@include bg-color($selector:$bg-purple-900, $bg-color:$color-purple-900);
+@include bg-color($selector:$bg-pink-100, $bg-color:$color-pink-100);
+@include bg-color($selector:$bg-pink-200, $bg-color:$color-pink-200);
+@include bg-color($selector:$bg-pink-300, $bg-color:$color-pink-300);
+@include bg-color($selector:$bg-pink-400, $bg-color:$color-pink-400);
+@include bg-color($selector:$bg-pink-500, $bg-color:$color-pink-500);
+@include bg-color($selector:$bg-pink-600, $bg-color:$color-pink-600);
+@include bg-color($selector:$bg-pink-700, $bg-color:$color-pink-700);
+@include bg-color($selector:$bg-pink-800, $bg-color:$color-pink-800);
+@include bg-color($selector:$bg-pink-900, $bg-color:$color-pink-900);
+
+#{$btn-white} {
+  @extend #{$bg-white};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-white, 10%);
+    color:text-color(darken($color-white, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-black} {
+  @extend #{$bg-black};
+  &#{$active}, &:hover, &:focus {
+    background-color:lighten($color-black, 10%);
+    color:text-color(lighten($color-black, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-dark} {
+  @extend #{$bg-dark};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-dark, 10%);
+    color:text-color(darken($color-dark, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey} {
+  @extend #{$bg-grey};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey, 10%);
+    color:text-color(darken($color-grey, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-100} {
+  @extend #{$bg-grey-100};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-100, 10%);
+    color:text-color(darken($color-grey-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-200} {
+  @extend #{$bg-grey-200};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-200, 10%);
+    color:text-color(darken($color-grey-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-300} {
+  @extend #{$bg-grey-300};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-300, 10%);
+    color:text-color(darken($color-grey-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-400} {
+  @extend #{$bg-grey-400};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-400, 10%);
+    color:text-color(darken($color-grey-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-500} {
+  @extend #{$bg-grey-500};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-500, 10%);
+    color:text-color(darken($color-grey-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-600} {
+  @extend #{$bg-grey-600};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-600, 10%);
+    color:text-color(darken($color-grey-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-700} {
+  @extend #{$bg-grey-700};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-700, 10%);
+    color:text-color(darken($color-grey-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-800} {
+  @extend #{$bg-grey-800};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-800, 10%);
+    color:text-color(darken($color-grey-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-900} {
+  @extend #{$bg-grey-900};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-900, 10%);
+    color:text-color(darken($color-grey-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-100} {
+  @extend #{$bg-bluegrey-100};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-100, 10%);
+    color:text-color(darken($color-bluegrey-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-200} {
+  @extend #{$bg-bluegrey-200};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-200, 10%);
+    color:text-color(darken($color-bluegrey-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-300} {
+  @extend #{$bg-bluegrey-300};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-300, 10%);
+    color:text-color(darken($color-bluegrey-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-400} {
+  @extend #{$bg-bluegrey-400};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-400, 10%);
+    color:text-color(darken($color-bluegrey-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-500} {
+  @extend #{$bg-bluegrey-500};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-500, 10%);
+    color:text-color(darken($color-bluegrey-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-600} {
+  @extend #{$bg-bluegrey-600};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-600, 10%);
+    color:text-color(darken($color-bluegrey-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-700} {
+  @extend #{$bg-bluegrey-700};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-700, 10%);
+    color:text-color(darken($color-bluegrey-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-800} {
+  @extend #{$bg-bluegrey-800};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-800, 10%);
+    color:text-color(darken($color-bluegrey-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-900} {
+  @extend #{$bg-bluegrey-900};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-900, 10%);
+    color:text-color(darken($color-bluegrey-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-100} {
+  @extend #{$bg-red-100};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-100, 10%);
+    color:text-color(darken($color-red-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-200} {
+  @extend #{$bg-red-200};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-200, 10%);
+    color:text-color(darken($color-red-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-300} {
+  @extend #{$bg-red-300};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-300, 10%);
+    color:text-color(darken($color-red-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-400} {
+  @extend #{$bg-red-400};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-400, 10%);
+    color:text-color(darken($color-red-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-500} {
+  @extend #{$bg-red-500};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-500, 10%);
+    color:text-color(darken($color-red-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-600} {
+  @extend #{$bg-red-600};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-600, 10%);
+    color:text-color(darken($color-red-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-700} {
+  @extend #{$bg-red-700};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-700, 10%);
+    color:text-color(darken($color-red-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-800} {
+  @extend #{$bg-red-800};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-800, 10%);
+    color:text-color(darken($color-red-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-900} {
+  @extend #{$bg-red-900};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-900, 10%);
+    color:text-color(darken($color-red-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-100} {
+  @extend #{$bg-orange-100};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-100, 10%);
+    color:text-color(darken($color-orange-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-200} {
+  @extend #{$bg-orange-200};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-200, 10%);
+    color:text-color(darken($color-orange-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-300} {
+  @extend #{$bg-orange-300};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-300, 10%);
+    color:text-color(darken($color-orange-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-400} {
+  @extend #{$bg-orange-400};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-400, 10%);
+    color:text-color(darken($color-orange-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-500} {
+  @extend #{$bg-orange-500};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-500, 10%);
+    color:text-color(darken($color-orange-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-600} {
+  @extend #{$bg-orange-600};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-600, 10%);
+    color:text-color(darken($color-orange-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-700} {
+  @extend #{$bg-orange-700};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-700, 10%);
+    color:text-color(darken($color-orange-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-800} {
+  @extend #{$bg-orange-800};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-800, 10%);
+    color:text-color(darken($color-orange-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-900} {
+  @extend #{$bg-orange-900};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-900, 10%);
+    color:text-color(darken($color-orange-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-100} {
+  @extend #{$bg-yellow-100};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-100, 10%);
+    color:text-color(darken($color-yellow-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-200} {
+  @extend #{$bg-yellow-200};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-200, 10%);
+    color:text-color(darken($color-yellow-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-300} {
+  @extend #{$bg-yellow-300};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-300, 10%);
+    color:text-color(darken($color-yellow-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-400} {
+  @extend #{$bg-yellow-400};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-400, 10%);
+    color:text-color(darken($color-yellow-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-500} {
+  @extend #{$bg-yellow-500};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-500, 10%);
+    color:text-color(darken($color-yellow-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-600} {
+  @extend #{$bg-yellow-600};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-600, 10%);
+    color:text-color(darken($color-yellow-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-700} {
+  @extend #{$bg-yellow-700};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-700, 10%);
+    color:text-color(darken($color-yellow-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-800} {
+  @extend #{$bg-yellow-800};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-800, 10%);
+    color:text-color(darken($color-yellow-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-900} {
+  @extend #{$bg-yellow-900};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-900, 10%);
+    color:text-color(darken($color-yellow-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-100} {
+  @extend #{$bg-green-100};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-100, 10%);
+    color:text-color(darken($color-green-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-200} {
+  @extend #{$bg-green-200};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-200, 10%);
+    color:text-color(darken($color-green-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-300} {
+  @extend #{$bg-green-300};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-300, 10%);
+    color:text-color(darken($color-green-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-400} {
+  @extend #{$bg-green-400};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-400, 10%);
+    color:text-color(darken($color-green-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-500} {
+  @extend #{$bg-green-500};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-500, 10%);
+    color:text-color(darken($color-green-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-600} {
+  @extend #{$bg-green-600};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-600, 10%);
+    color:text-color(darken($color-green-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-700} {
+  @extend #{$bg-green-700};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-700, 10%);
+    color:text-color(darken($color-green-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-800} {
+  @extend #{$bg-green-800};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-800, 10%);
+    color:text-color(darken($color-green-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-900} {
+  @extend #{$bg-green-900};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-900, 10%);
+    color:text-color(darken($color-green-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-100} {
+  @extend #{$bg-teal-100};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-100, 10%);
+    color:text-color(darken($color-teal-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-200} {
+  @extend #{$bg-teal-200};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-200, 10%);
+    color:text-color(darken($color-teal-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-300} {
+  @extend #{$bg-teal-300};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-300, 10%);
+    color:text-color(darken($color-teal-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-400} {
+  @extend #{$bg-teal-400};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-400, 10%);
+    color:text-color(darken($color-teal-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-500} {
+  @extend #{$bg-teal-500};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-500, 10%);
+    color:text-color(darken($color-teal-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-600} {
+  @extend #{$bg-teal-600};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-600, 10%);
+    color:text-color(darken($color-teal-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-700} {
+  @extend #{$bg-teal-700};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-700, 10%);
+    color:text-color(darken($color-teal-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-800} {
+  @extend #{$bg-teal-800};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-800, 10%);
+    color:text-color(darken($color-teal-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-900} {
+  @extend #{$bg-teal-900};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-900, 10%);
+    color:text-color(darken($color-teal-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-100} {
+  @extend #{$bg-blue-100};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-100, 10%);
+    color:text-color(darken($color-blue-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-200} {
+  @extend #{$bg-blue-200};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-200, 10%);
+    color:text-color(darken($color-blue-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-300} {
+  @extend #{$bg-blue-300};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-300, 10%);
+    color:text-color(darken($color-blue-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-400} {
+  @extend #{$bg-blue-400};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-400, 10%);
+    color:text-color(darken($color-blue-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-500} {
+  @extend #{$bg-blue-500};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-500, 10%);
+    color:text-color(darken($color-blue-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-600} {
+  @extend #{$bg-blue-600};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-600, 10%);
+    color:text-color(darken($color-blue-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-700} {
+  @extend #{$bg-blue-700};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-700, 10%);
+    color:text-color(darken($color-blue-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-800} {
+  @extend #{$bg-blue-800};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-800, 10%);
+    color:text-color(darken($color-blue-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-900} {
+  @extend #{$bg-blue-900};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-900, 10%);
+    color:text-color(darken($color-blue-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-100} {
+  @extend #{$bg-indigo-100};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-100, 10%);
+    color:text-color(darken($color-indigo-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-200} {
+  @extend #{$bg-indigo-200};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-200, 10%);
+    color:text-color(darken($color-indigo-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-300} {
+  @extend #{$bg-indigo-300};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-300, 10%);
+    color:text-color(darken($color-indigo-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-400} {
+  @extend #{$bg-indigo-400};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-400, 10%);
+    color:text-color(darken($color-indigo-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-500} {
+  @extend #{$bg-indigo-500};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-500, 10%);
+    color:text-color(darken($color-indigo-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-600} {
+  @extend #{$bg-indigo-600};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-600, 10%);
+    color:text-color(darken($color-indigo-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-700} {
+  @extend #{$bg-indigo-700};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-700, 10%);
+    color:text-color(darken($color-indigo-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-800} {
+  @extend #{$bg-indigo-800};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-800, 10%);
+    color:text-color(darken($color-indigo-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-900} {
+  @extend #{$bg-indigo-900};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-900, 10%);
+    color:text-color(darken($color-indigo-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-100} {
+  @extend #{$bg-purple-100};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-100, 10%);
+    color:text-color(darken($color-purple-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-200} {
+  @extend #{$bg-purple-200};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-200, 10%);
+    color:text-color(darken($color-purple-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-300} {
+  @extend #{$bg-purple-300};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-300, 10%);
+    color:text-color(darken($color-purple-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-400} {
+  @extend #{$bg-purple-400};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-400, 10%);
+    color:text-color(darken($color-purple-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-500} {
+  @extend #{$bg-purple-500};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-500, 10%);
+    color:text-color(darken($color-purple-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-600} {
+  @extend #{$bg-purple-600};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-600, 10%);
+    color:text-color(darken($color-purple-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-700} {
+  @extend #{$bg-purple-700};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-700, 10%);
+    color:text-color(darken($color-purple-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-800} {
+  @extend #{$bg-purple-800};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-800, 10%);
+    color:text-color(darken($color-purple-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-900} {
+  @extend #{$bg-purple-900};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-900, 10%);
+    color:text-color(darken($color-purple-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-100} {
+  @extend #{$bg-pink-100};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-100, 10%);
+    color:text-color(darken($color-pink-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-200} {
+  @extend #{$bg-pink-200};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-200, 10%);
+    color:text-color(darken($color-pink-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-300} {
+  @extend #{$bg-pink-300};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-300, 10%);
+    color:text-color(darken($color-pink-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-400} {
+  @extend #{$bg-pink-400};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-400, 10%);
+    color:text-color(darken($color-pink-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-500} {
+  @extend #{$bg-pink-500};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-500, 10%);
+    color:text-color(darken($color-pink-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-600} {
+  @extend #{$bg-pink-600};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-600, 10%);
+    color:text-color(darken($color-pink-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-700} {
+  @extend #{$bg-pink-700};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-700, 10%);
+    color:text-color(darken($color-pink-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-800} {
+  @extend #{$bg-pink-800};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-800, 10%);
+    color:text-color(darken($color-pink-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-900} {
+  @extend #{$bg-pink-900};
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-900, 10%);
+    color:text-color(darken($color-pink-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-white}\! {
+  @extend #{$bg-white}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-white, 10%) !important;
+    color:text-color(darken($color-white, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-black}\! {
+  @extend #{$bg-black}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:lighten($color-black, 10%) !important;
+    color:text-color(lighten($color-black, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-dark}\! {
+  @extend #{$bg-dark}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-dark, 10%) !important;
+    color:text-color(darken($color-dark, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey}\! {
+  @extend #{$bg-grey}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey, 10%) !important;
+    color:text-color(darken($color-grey, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-100}\! {
+  @extend #{$bg-grey-100}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-100, 10%) !important;
+    color:text-color(darken($color-grey-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-200}\! {
+  @extend #{$bg-grey-200}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-200, 10%) !important;
+    color:text-color(darken($color-grey-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-300}\! {
+  @extend #{$bg-grey-300}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-300, 10%) !important;
+    color:text-color(darken($color-grey-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-400}\! {
+  @extend #{$bg-grey-400}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-400, 10%) !important;
+    color:text-color(darken($color-grey-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-500}\! {
+  @extend #{$bg-grey-500}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-500, 10%) !important;
+    color:text-color(darken($color-grey-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-600}\! {
+  @extend #{$bg-grey-600}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-600, 10%) !important;
+    color:text-color(darken($color-grey-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-700}\! {
+  @extend #{$bg-grey-700}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-700, 10%) !important;
+    color:text-color(darken($color-grey-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-800}\! {
+  @extend #{$bg-grey-800}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-800, 10%) !important;
+    color:text-color(darken($color-grey-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-grey-900}\! {
+  @extend #{$bg-grey-900}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-grey-900, 10%) !important;
+    color:text-color(darken($color-grey-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-100}\! {
+  @extend #{$bg-bluegrey-100}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-100, 10%) !important;
+    color:text-color(darken($color-bluegrey-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-200}\! {
+  @extend #{$bg-bluegrey-200}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-200, 10%) !important;
+    color:text-color(darken($color-bluegrey-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-300}\! {
+  @extend #{$bg-bluegrey-300}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-300, 10%) !important;
+    color:text-color(darken($color-bluegrey-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-400}\! {
+  @extend #{$bg-bluegrey-400}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-400, 10%) !important;
+    color:text-color(darken($color-bluegrey-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-500}\! {
+  @extend #{$bg-bluegrey-500}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-500, 10%) !important;
+    color:text-color(darken($color-bluegrey-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-600}\! {
+  @extend #{$bg-bluegrey-600}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-600, 10%) !important;
+    color:text-color(darken($color-bluegrey-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-700}\! {
+  @extend #{$bg-bluegrey-700}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-700, 10%) !important;
+    color:text-color(darken($color-bluegrey-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-800}\! {
+  @extend #{$bg-bluegrey-800}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-800, 10%) !important;
+    color:text-color(darken($color-bluegrey-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-bluegrey-900}\! {
+  @extend #{$bg-bluegrey-900}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-bluegrey-900, 10%) !important;
+    color:text-color(darken($color-bluegrey-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-100}\! {
+  @extend #{$bg-red-100}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-100, 10%) !important;
+    color:text-color(darken($color-red-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-200}\! {
+  @extend #{$bg-red-200}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-200, 10%) !important;
+    color:text-color(darken($color-red-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-300}\! {
+  @extend #{$bg-red-300}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-300, 10%) !important;
+    color:text-color(darken($color-red-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-400}\! {
+  @extend #{$bg-red-400}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-400, 10%) !important;
+    color:text-color(darken($color-red-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-500}\! {
+  @extend #{$bg-red-500}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-500, 10%) !important;
+    color:text-color(darken($color-red-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-600}\! {
+  @extend #{$bg-red-600}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-600, 10%) !important;
+    color:text-color(darken($color-red-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-700}\! {
+  @extend #{$bg-red-700}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-700, 10%) !important;
+    color:text-color(darken($color-red-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-800}\! {
+  @extend #{$bg-red-800}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-800, 10%) !important;
+    color:text-color(darken($color-red-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-red-900}\! {
+  @extend #{$bg-red-900}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-red-900, 10%) !important;
+    color:text-color(darken($color-red-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-100}\! {
+  @extend #{$bg-orange-100}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-100, 10%) !important;
+    color:text-color(darken($color-orange-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-200}\! {
+  @extend #{$bg-orange-200}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-200, 10%) !important;
+    color:text-color(darken($color-orange-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-300}\! {
+  @extend #{$bg-orange-300}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-300, 10%) !important;
+    color:text-color(darken($color-orange-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-400}\! {
+  @extend #{$bg-orange-400}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-400, 10%) !important;
+    color:text-color(darken($color-orange-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-500}\! {
+  @extend #{$bg-orange-500}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-500, 10%) !important;
+    color:text-color(darken($color-orange-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-600}\! {
+  @extend #{$bg-orange-600}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-600, 10%) !important;
+    color:text-color(darken($color-orange-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-700}\! {
+  @extend #{$bg-orange-700}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-700, 10%) !important;
+    color:text-color(darken($color-orange-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-800}\! {
+  @extend #{$bg-orange-800}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-800, 10%) !important;
+    color:text-color(darken($color-orange-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-orange-900}\! {
+  @extend #{$bg-orange-900}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-orange-900, 10%) !important;
+    color:text-color(darken($color-orange-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-100}\! {
+  @extend #{$bg-yellow-100}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-100, 10%) !important;
+    color:text-color(darken($color-yellow-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-200}\! {
+  @extend #{$bg-yellow-200}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-200, 10%) !important;
+    color:text-color(darken($color-yellow-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-300}\! {
+  @extend #{$bg-yellow-300}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-300, 10%) !important;
+    color:text-color(darken($color-yellow-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-400}\! {
+  @extend #{$bg-yellow-400}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-400, 10%) !important;
+    color:text-color(darken($color-yellow-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-500}\! {
+  @extend #{$bg-yellow-500}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-500, 10%) !important;
+    color:text-color(darken($color-yellow-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-600}\! {
+  @extend #{$bg-yellow-600}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-600, 10%) !important;
+    color:text-color(darken($color-yellow-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-700}\! {
+  @extend #{$bg-yellow-700}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-700, 10%) !important;
+    color:text-color(darken($color-yellow-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-800}\! {
+  @extend #{$bg-yellow-800}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-800, 10%) !important;
+    color:text-color(darken($color-yellow-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-yellow-900}\! {
+  @extend #{$bg-yellow-900}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-yellow-900, 10%) !important;
+    color:text-color(darken($color-yellow-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-100}\! {
+  @extend #{$bg-green-100}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-100, 10%) !important;
+    color:text-color(darken($color-green-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-200}\! {
+  @extend #{$bg-green-200}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-200, 10%) !important;
+    color:text-color(darken($color-green-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-300}\! {
+  @extend #{$bg-green-300}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-300, 10%) !important;
+    color:text-color(darken($color-green-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-400}\! {
+  @extend #{$bg-green-400}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-400, 10%) !important;
+    color:text-color(darken($color-green-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-500}\! {
+  @extend #{$bg-green-500}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-500, 10%) !important;
+    color:text-color(darken($color-green-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-600}\! {
+  @extend #{$bg-green-600}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-600, 10%) !important;
+    color:text-color(darken($color-green-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-700}\! {
+  @extend #{$bg-green-700}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-700, 10%) !important;
+    color:text-color(darken($color-green-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-800}\! {
+  @extend #{$bg-green-800}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-800, 10%) !important;
+    color:text-color(darken($color-green-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-green-900}\! {
+  @extend #{$bg-green-900}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-green-900, 10%) !important;
+    color:text-color(darken($color-green-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-100}\! {
+  @extend #{$bg-teal-100}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-100, 10%) !important;
+    color:text-color(darken($color-teal-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-200}\! {
+  @extend #{$bg-teal-200}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-200, 10%) !important;
+    color:text-color(darken($color-teal-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-300}\! {
+  @extend #{$bg-teal-300}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-300, 10%) !important;
+    color:text-color(darken($color-teal-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-400}\! {
+  @extend #{$bg-teal-400}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-400, 10%) !important;
+    color:text-color(darken($color-teal-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-500}\! {
+  @extend #{$bg-teal-500}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-500, 10%) !important;
+    color:text-color(darken($color-teal-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-600}\! {
+  @extend #{$bg-teal-600}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-600, 10%) !important;
+    color:text-color(darken($color-teal-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-700}\! {
+  @extend #{$bg-teal-700}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-700, 10%) !important;
+    color:text-color(darken($color-teal-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-800}\! {
+  @extend #{$bg-teal-800}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-800, 10%) !important;
+    color:text-color(darken($color-teal-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-teal-900}\! {
+  @extend #{$bg-teal-900}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-teal-900, 10%) !important;
+    color:text-color(darken($color-teal-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-100}\! {
+  @extend #{$bg-blue-100}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-100, 10%) !important;
+    color:text-color(darken($color-blue-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-200}\! {
+  @extend #{$bg-blue-200}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-200, 10%) !important;
+    color:text-color(darken($color-blue-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-300}\! {
+  @extend #{$bg-blue-300}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-300, 10%) !important;
+    color:text-color(darken($color-blue-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-400}\! {
+  @extend #{$bg-blue-400}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-400, 10%) !important;
+    color:text-color(darken($color-blue-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-500}\! {
+  @extend #{$bg-blue-500}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-500, 10%) !important;
+    color:text-color(darken($color-blue-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-600}\! {
+  @extend #{$bg-blue-600}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-600, 10%) !important;
+    color:text-color(darken($color-blue-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-700}\! {
+  @extend #{$bg-blue-700}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-700, 10%) !important;
+    color:text-color(darken($color-blue-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-800}\! {
+  @extend #{$bg-blue-800}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-800, 10%) !important;
+    color:text-color(darken($color-blue-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-blue-900}\! {
+  @extend #{$bg-blue-900}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-blue-900, 10%) !important;
+    color:text-color(darken($color-blue-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-100}\! {
+  @extend #{$bg-indigo-100}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-100, 10%) !important;
+    color:text-color(darken($color-indigo-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-200}\! {
+  @extend #{$bg-indigo-200}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-200, 10%) !important;
+    color:text-color(darken($color-indigo-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-300}\! {
+  @extend #{$bg-indigo-300}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-300, 10%) !important;
+    color:text-color(darken($color-indigo-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-400}\! {
+  @extend #{$bg-indigo-400}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-400, 10%) !important;
+    color:text-color(darken($color-indigo-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-500}\! {
+  @extend #{$bg-indigo-500}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-500, 10%) !important;
+    color:text-color(darken($color-indigo-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-600}\! {
+  @extend #{$bg-indigo-600}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-600, 10%) !important;
+    color:text-color(darken($color-indigo-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-700}\! {
+  @extend #{$bg-indigo-700}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-700, 10%) !important;
+    color:text-color(darken($color-indigo-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-800}\! {
+  @extend #{$bg-indigo-800}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-800, 10%) !important;
+    color:text-color(darken($color-indigo-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-indigo-900}\! {
+  @extend #{$bg-indigo-900}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-indigo-900, 10%) !important;
+    color:text-color(darken($color-indigo-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-100}\! {
+  @extend #{$bg-purple-100}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-100, 10%) !important;
+    color:text-color(darken($color-purple-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-200}\! {
+  @extend #{$bg-purple-200}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-200, 10%) !important;
+    color:text-color(darken($color-purple-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-300}\! {
+  @extend #{$bg-purple-300}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-300, 10%) !important;
+    color:text-color(darken($color-purple-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-400}\! {
+  @extend #{$bg-purple-400}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-400, 10%) !important;
+    color:text-color(darken($color-purple-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-500}\! {
+  @extend #{$bg-purple-500}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-500, 10%) !important;
+    color:text-color(darken($color-purple-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-600}\! {
+  @extend #{$bg-purple-600}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-600, 10%) !important;
+    color:text-color(darken($color-purple-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-700}\! {
+  @extend #{$bg-purple-700}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-700, 10%) !important;
+    color:text-color(darken($color-purple-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-800}\! {
+  @extend #{$bg-purple-800}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-800, 10%) !important;
+    color:text-color(darken($color-purple-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-purple-900}\! {
+  @extend #{$bg-purple-900}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-purple-900, 10%) !important;
+    color:text-color(darken($color-purple-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-100}\! {
+  @extend #{$bg-pink-100}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-100, 10%) !important;
+    color:text-color(darken($color-pink-100, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-200}\! {
+  @extend #{$bg-pink-200}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-200, 10%) !important;
+    color:text-color(darken($color-pink-200, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-300}\! {
+  @extend #{$bg-pink-300}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-300, 10%) !important;
+    color:text-color(darken($color-pink-300, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-400}\! {
+  @extend #{$bg-pink-400}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-400, 10%) !important;
+    color:text-color(darken($color-pink-400, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-500}\! {
+  @extend #{$bg-pink-500}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-500, 10%) !important;
+    color:text-color(darken($color-pink-500, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-600}\! {
+  @extend #{$bg-pink-600}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-600, 10%) !important;
+    color:text-color(darken($color-pink-600, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-700}\! {
+  @extend #{$bg-pink-700}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-700, 10%) !important;
+    color:text-color(darken($color-pink-700, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-800}\! {
+  @extend #{$bg-pink-800}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-800, 10%) !important;
+    color:text-color(darken($color-pink-800, 10%)) !important;
+    text-decoration: none;
+  }
+}
+#{$btn-pink-900}\! {
+  @extend #{$bg-pink-900}\!;
+  &#{$active}, &:hover, &:focus {
+    background-color:darken($color-pink-900, 10%) !important;
+    color:text-color(darken($color-pink-900, 10%)) !important;
+    text-decoration: none;
+  }
+}
+
+#{$text-grey-100}\! {color:$color-grey-100 !important;}
+#{$text-grey-200}\! {color:$color-grey-200 !important;}
+#{$text-grey-300}\! {color:$color-grey-300 !important;}
+#{$text-grey-400}\! {color:$color-grey-400 !important;}
+#{$text-grey-500}\! {color:$color-grey-500 !important;}
+#{$text-grey-600}\! {color:$color-grey-600 !important;}
+#{$text-grey-700}\! {color:$color-grey-700 !important;}
+#{$text-grey-800}\! {color:$color-grey-800 !important;}
+#{$text-grey-900}\! {color:$color-grey-900 !important;}
+#{$text-bluegrey-100}\! {color:$color-bluegrey-100 !important;}
+#{$text-bluegrey-200}\! {color:$color-bluegrey-200 !important;}
+#{$text-bluegrey-300}\! {color:$color-bluegrey-300 !important;}
+#{$text-bluegrey-400}\! {color:$color-bluegrey-400 !important;}
+#{$text-bluegrey-500}\! {color:$color-bluegrey-500 !important;}
+#{$text-bluegrey-600}\! {color:$color-bluegrey-600 !important;}
+#{$text-bluegrey-700}\! {color:$color-bluegrey-700 !important;}
+#{$text-bluegrey-800}\! {color:$color-bluegrey-800 !important;}
+#{$text-bluegrey-900}\! {color:$color-bluegrey-900 !important;}
+#{$text-red-100}\! {color:$color-red-100 !important;}
+#{$text-red-200}\! {color:$color-red-200 !important;}
+#{$text-red-300}\! {color:$color-red-300 !important;}
+#{$text-red-400}\! {color:$color-red-400 !important;}
+#{$text-red-500}\! {color:$color-red-500 !important;}
+#{$text-red-600}\! {color:$color-red-600 !important;}
+#{$text-red-700}\! {color:$color-red-700 !important;}
+#{$text-red-800}\! {color:$color-red-800 !important;}
+#{$text-red-900}\! {color:$color-red-900 !important;}
+#{$text-orange-100}\! {color:$color-orange-100 !important;}
+#{$text-orange-200}\! {color:$color-orange-200 !important;}
+#{$text-orange-300}\! {color:$color-orange-300 !important;}
+#{$text-orange-400}\! {color:$color-orange-400 !important;}
+#{$text-orange-500}\! {color:$color-orange-500 !important;}
+#{$text-orange-600}\! {color:$color-orange-600 !important;}
+#{$text-orange-700}\! {color:$color-orange-700 !important;}
+#{$text-orange-800}\! {color:$color-orange-800 !important;}
+#{$text-orange-900}\! {color:$color-orange-900 !important;}
+#{$text-yellow-100}\! {color:$color-yellow-100 !important;}
+#{$text-yellow-200}\! {color:$color-yellow-200 !important;}
+#{$text-yellow-300}\! {color:$color-yellow-300 !important;}
+#{$text-yellow-400}\! {color:$color-yellow-400 !important;}
+#{$text-yellow-500}\! {color:$color-yellow-500 !important;}
+#{$text-yellow-600}\! {color:$color-yellow-600 !important;}
+#{$text-yellow-700}\! {color:$color-yellow-700 !important;}
+#{$text-yellow-800}\! {color:$color-yellow-800 !important;}
+#{$text-yellow-900}\! {color:$color-yellow-900 !important;}
+#{$text-green-100}\! {color:$color-green-100 !important;}
+#{$text-green-200}\! {color:$color-green-200 !important;}
+#{$text-green-300}\! {color:$color-green-300 !important;}
+#{$text-green-400}\! {color:$color-green-400 !important;}
+#{$text-green-500}\! {color:$color-green-500 !important;}
+#{$text-green-600}\! {color:$color-green-600 !important;}
+#{$text-green-700}\! {color:$color-green-700 !important;}
+#{$text-green-800}\! {color:$color-green-800 !important;}
+#{$text-green-900}\! {color:$color-green-900 !important;}
+#{$text-teal-100}\! {color:$color-teal-100 !important;}
+#{$text-teal-200}\! {color:$color-teal-200 !important;}
+#{$text-teal-300}\! {color:$color-teal-300 !important;}
+#{$text-teal-400}\! {color:$color-teal-400 !important;}
+#{$text-teal-500}\! {color:$color-teal-500 !important;}
+#{$text-teal-600}\! {color:$color-teal-600 !important;}
+#{$text-teal-700}\! {color:$color-teal-700 !important;}
+#{$text-teal-800}\! {color:$color-teal-800 !important;}
+#{$text-teal-900}\! {color:$color-teal-900 !important;}
+#{$text-blue-100}\! {color:$color-blue-100 !important;}
+#{$text-blue-200}\! {color:$color-blue-200 !important;}
+#{$text-blue-300}\! {color:$color-blue-300 !important;}
+#{$text-blue-400}\! {color:$color-blue-400 !important;}
+#{$text-blue-500}\! {color:$color-blue-500 !important;}
+#{$text-blue-600}\! {color:$color-blue-600 !important;}
+#{$text-blue-700}\! {color:$color-blue-700 !important;}
+#{$text-blue-800}\! {color:$color-blue-800 !important;}
+#{$text-blue-900}\! {color:$color-blue-900 !important;}
+#{$text-indigo-100}\! {color:$color-indigo-100 !important;}
+#{$text-indigo-200}\! {color:$color-indigo-200 !important;}
+#{$text-indigo-300}\! {color:$color-indigo-300 !important;}
+#{$text-indigo-400}\! {color:$color-indigo-400 !important;}
+#{$text-indigo-500}\! {color:$color-indigo-500 !important;}
+#{$text-indigo-600}\! {color:$color-indigo-600 !important;}
+#{$text-indigo-700}\! {color:$color-indigo-700 !important;}
+#{$text-indigo-800}\! {color:$color-indigo-800 !important;}
+#{$text-indigo-900}\! {color:$color-indigo-900 !important;}
+#{$text-purple-100}\! {color:$color-purple-100 !important;}
+#{$text-purple-200}\! {color:$color-purple-200 !important;}
+#{$text-purple-300}\! {color:$color-purple-300 !important;}
+#{$text-purple-400}\! {color:$color-purple-400 !important;}
+#{$text-purple-500}\! {color:$color-purple-500 !important;}
+#{$text-purple-600}\! {color:$color-purple-600 !important;}
+#{$text-purple-700}\! {color:$color-purple-700 !important;}
+#{$text-purple-800}\! {color:$color-purple-800 !important;}
+#{$text-purple-900}\! {color:$color-purple-900 !important;}
+#{$text-pink-100}\! {color:$color-pink-100 !important;}
+#{$text-pink-200}\! {color:$color-pink-200 !important;}
+#{$text-pink-300}\! {color:$color-pink-300 !important;}
+#{$text-pink-400}\! {color:$color-pink-400 !important;}
+#{$text-pink-500}\! {color:$color-pink-500 !important;}
+#{$text-pink-600}\! {color:$color-pink-600 !important;}
+#{$text-pink-700}\! {color:$color-pink-700 !important;}
+#{$text-pink-800}\! {color:$color-pink-800 !important;}
+#{$text-pink-900}\! {color:$color-pink-900 !important;}
+
+@include bg-color($selector:$bg-white, $bg-color:$color-white, $important:true);
+@include bg-color($selector:$bg-black, $bg-color:$color-black, $important:true);
+@include bg-color($selector:$bg-dark, $bg-color:$color-dark, $important:true);
+@include bg-color($selector:$bg-grey, $bg-color:$color-grey, $important:true);
+@include bg-color($selector:$bg-grey-100, $bg-color:$color-grey-100, $important:true);
+@include bg-color($selector:$bg-grey-200, $bg-color:$color-grey-200, $important:true);
+@include bg-color($selector:$bg-grey-300, $bg-color:$color-grey-300, $important:true);
+@include bg-color($selector:$bg-grey-400, $bg-color:$color-grey-400, $important:true);
+@include bg-color($selector:$bg-grey-500, $bg-color:$color-grey-500, $important:true);
+@include bg-color($selector:$bg-grey-600, $bg-color:$color-grey-600, $important:true);
+@include bg-color($selector:$bg-grey-700, $bg-color:$color-grey-700, $important:true);
+@include bg-color($selector:$bg-grey-800, $bg-color:$color-grey-800, $important:true);
+@include bg-color($selector:$bg-grey-900, $bg-color:$color-grey-900, $important:true);
+@include bg-color($selector:$bg-bluegrey-100, $bg-color:$color-bluegrey-100, $important:true);
+@include bg-color($selector:$bg-bluegrey-200, $bg-color:$color-bluegrey-200, $important:true);
+@include bg-color($selector:$bg-bluegrey-300, $bg-color:$color-bluegrey-300, $important:true);
+@include bg-color($selector:$bg-bluegrey-400, $bg-color:$color-bluegrey-400, $important:true);
+@include bg-color($selector:$bg-bluegrey-500, $bg-color:$color-bluegrey-500, $important:true);
+@include bg-color($selector:$bg-bluegrey-600, $bg-color:$color-bluegrey-600, $important:true);
+@include bg-color($selector:$bg-bluegrey-700, $bg-color:$color-bluegrey-700, $important:true);
+@include bg-color($selector:$bg-bluegrey-800, $bg-color:$color-bluegrey-800, $important:true);
+@include bg-color($selector:$bg-bluegrey-900, $bg-color:$color-bluegrey-900, $important:true);
+@include bg-color($selector:$bg-red-100, $bg-color:$color-red-100, $important:true);
+@include bg-color($selector:$bg-red-200, $bg-color:$color-red-200, $important:true);
+@include bg-color($selector:$bg-red-300, $bg-color:$color-red-300, $important:true);
+@include bg-color($selector:$bg-red-400, $bg-color:$color-red-400, $important:true);
+@include bg-color($selector:$bg-red-500, $bg-color:$color-red-500, $important:true);
+@include bg-color($selector:$bg-red-600, $bg-color:$color-red-600, $important:true);
+@include bg-color($selector:$bg-red-700, $bg-color:$color-red-700, $important:true);
+@include bg-color($selector:$bg-red-800, $bg-color:$color-red-800, $important:true);
+@include bg-color($selector:$bg-red-900, $bg-color:$color-red-900, $important:true);
+@include bg-color($selector:$bg-orange-100, $bg-color:$color-orange-100, $important:true);
+@include bg-color($selector:$bg-orange-200, $bg-color:$color-orange-200, $important:true);
+@include bg-color($selector:$bg-orange-300, $bg-color:$color-orange-300, $important:true);
+@include bg-color($selector:$bg-orange-400, $bg-color:$color-orange-400, $important:true);
+@include bg-color($selector:$bg-orange-500, $bg-color:$color-orange-500, $important:true);
+@include bg-color($selector:$bg-orange-600, $bg-color:$color-orange-600, $important:true);
+@include bg-color($selector:$bg-orange-700, $bg-color:$color-orange-700, $important:true);
+@include bg-color($selector:$bg-orange-800, $bg-color:$color-orange-800, $important:true);
+@include bg-color($selector:$bg-orange-900, $bg-color:$color-orange-900, $important:true);
+@include bg-color($selector:$bg-yellow-100, $bg-color:$color-yellow-100, $important:true);
+@include bg-color($selector:$bg-yellow-200, $bg-color:$color-yellow-200, $important:true);
+@include bg-color($selector:$bg-yellow-300, $bg-color:$color-yellow-300, $important:true);
+@include bg-color($selector:$bg-yellow-400, $bg-color:$color-yellow-400, $important:true);
+@include bg-color($selector:$bg-yellow-500, $bg-color:$color-yellow-500, $important:true);
+@include bg-color($selector:$bg-yellow-600, $bg-color:$color-yellow-600, $important:true);
+@include bg-color($selector:$bg-yellow-700, $bg-color:$color-yellow-700, $important:true);
+@include bg-color($selector:$bg-yellow-800, $bg-color:$color-yellow-800, $important:true);
+@include bg-color($selector:$bg-yellow-900, $bg-color:$color-yellow-900, $important:true);
+@include bg-color($selector:$bg-green-100, $bg-color:$color-green-100, $important:true);
+@include bg-color($selector:$bg-green-200, $bg-color:$color-green-200, $important:true);
+@include bg-color($selector:$bg-green-300, $bg-color:$color-green-300, $important:true);
+@include bg-color($selector:$bg-green-400, $bg-color:$color-green-400, $important:true);
+@include bg-color($selector:$bg-green-500, $bg-color:$color-green-500, $important:true);
+@include bg-color($selector:$bg-green-600, $bg-color:$color-green-600, $important:true);
+@include bg-color($selector:$bg-green-700, $bg-color:$color-green-700, $important:true);
+@include bg-color($selector:$bg-green-800, $bg-color:$color-green-800, $important:true);
+@include bg-color($selector:$bg-green-900, $bg-color:$color-green-900, $important:true);
+@include bg-color($selector:$bg-teal-100, $bg-color:$color-teal-100, $important:true);
+@include bg-color($selector:$bg-teal-200, $bg-color:$color-teal-200, $important:true);
+@include bg-color($selector:$bg-teal-300, $bg-color:$color-teal-300, $important:true);
+@include bg-color($selector:$bg-teal-400, $bg-color:$color-teal-400, $important:true);
+@include bg-color($selector:$bg-teal-500, $bg-color:$color-teal-500, $important:true);
+@include bg-color($selector:$bg-teal-600, $bg-color:$color-teal-600, $important:true);
+@include bg-color($selector:$bg-teal-700, $bg-color:$color-teal-700, $important:true);
+@include bg-color($selector:$bg-teal-800, $bg-color:$color-teal-800, $important:true);
+@include bg-color($selector:$bg-teal-900, $bg-color:$color-teal-900, $important:true);
+@include bg-color($selector:$bg-blue-100, $bg-color:$color-blue-100, $important:true);
+@include bg-color($selector:$bg-blue-200, $bg-color:$color-blue-200, $important:true);
+@include bg-color($selector:$bg-blue-300, $bg-color:$color-blue-300, $important:true);
+@include bg-color($selector:$bg-blue-400, $bg-color:$color-blue-400, $important:true);
+@include bg-color($selector:$bg-blue-500, $bg-color:$color-blue-500, $important:true);
+@include bg-color($selector:$bg-blue-600, $bg-color:$color-blue-600, $important:true);
+@include bg-color($selector:$bg-blue-700, $bg-color:$color-blue-700, $important:true);
+@include bg-color($selector:$bg-blue-800, $bg-color:$color-blue-800, $important:true);
+@include bg-color($selector:$bg-blue-900, $bg-color:$color-blue-900, $important:true);
+@include bg-color($selector:$bg-indigo-100, $bg-color:$color-indigo-100, $important:true);
+@include bg-color($selector:$bg-indigo-200, $bg-color:$color-indigo-200, $important:true);
+@include bg-color($selector:$bg-indigo-300, $bg-color:$color-indigo-300, $important:true);
+@include bg-color($selector:$bg-indigo-400, $bg-color:$color-indigo-400, $important:true);
+@include bg-color($selector:$bg-indigo-500, $bg-color:$color-indigo-500, $important:true);
+@include bg-color($selector:$bg-indigo-600, $bg-color:$color-indigo-600, $important:true);
+@include bg-color($selector:$bg-indigo-700, $bg-color:$color-indigo-700, $important:true);
+@include bg-color($selector:$bg-indigo-800, $bg-color:$color-indigo-800, $important:true);
+@include bg-color($selector:$bg-indigo-900, $bg-color:$color-indigo-900, $important:true);
+@include bg-color($selector:$bg-purple-100, $bg-color:$color-purple-100, $important:true);
+@include bg-color($selector:$bg-purple-200, $bg-color:$color-purple-200, $important:true);
+@include bg-color($selector:$bg-purple-300, $bg-color:$color-purple-300, $important:true);
+@include bg-color($selector:$bg-purple-400, $bg-color:$color-purple-400, $important:true);
+@include bg-color($selector:$bg-purple-500, $bg-color:$color-purple-500, $important:true);
+@include bg-color($selector:$bg-purple-600, $bg-color:$color-purple-600, $important:true);
+@include bg-color($selector:$bg-purple-700, $bg-color:$color-purple-700, $important:true);
+@include bg-color($selector:$bg-purple-800, $bg-color:$color-purple-800, $important:true);
+@include bg-color($selector:$bg-purple-900, $bg-color:$color-purple-900, $important:true);
+@include bg-color($selector:$bg-pink-100, $bg-color:$color-pink-100, $important:true);
+@include bg-color($selector:$bg-pink-200, $bg-color:$color-pink-200, $important:true);
+@include bg-color($selector:$bg-pink-300, $bg-color:$color-pink-300, $important:true);
+@include bg-color($selector:$bg-pink-400, $bg-color:$color-pink-400, $important:true);
+@include bg-color($selector:$bg-pink-500, $bg-color:$color-pink-500, $important:true);
+@include bg-color($selector:$bg-pink-600, $bg-color:$color-pink-600, $important:true);
+@include bg-color($selector:$bg-pink-700, $bg-color:$color-pink-700, $important:true);
+@include bg-color($selector:$bg-pink-800, $bg-color:$color-pink-800, $important:true);
+@include bg-color($selector:$bg-pink-900, $bg-color:$color-pink-900, $important:true);
+
+/*** Brand ***/
+$brand-text:$text-color-facebook $facebook, $text-color-twitter $twitter, $text-color-googleplus $googleplus, $text-color-linkedin $linkedin, $text-color-line $line;
+@each $name, $color in $brand-text {
+  #{$name} {&, & * {color:$color;}}
+  #{$name}\! {&, & * {color:$color !important;}}
+  a#{$name}:hover, a#{$name}:hover * {color:darken($color, 10%);}
+  a#{$name}\!:hover, a#{$name}\!:hover * {color:darken($color, 10%) !important;}
+}
+$brand-bg:$bg-facebook $facebook, $bg-twitter $twitter, $bg-googleplus $googleplus, $bg-linkedin $linkedin, $bg-line $line;
+@each $name, $color in $brand-bg {
+  @include bg-color($selector:$name, $bg-color:$color)
+}
+@each $name, $color in $brand-bg {
+  @include bg-color($selector:$name, $bg-color:$color, $important:true)
+}
+$hover-brand-bg:"bg_facebook" $facebook, "bg_twitter" $twitter, "bg_googleplus" $googleplus, "bg_linkedin" $linkedin, "bg_line" $line;
+@each $name, $color in $hover-brand-bg {
+  // .hover\:#{$name}, .hover\:#{$name} * {color:text-color($color);}
+  a.hover\:#{$name}:hover, a.hover\:#{$name}:hover * {color:lighten(text-color($color), 10%);}
+  a.hover\:#{$name}:hover {background-color:$color;}
+}
+@each $name, $color in $hover-brand-bg {
+  // .hover\:#{$name}\!, .hover\:#{$name}\! * {color:text-color($color) !important;}
+  a.hover\:#{$name}\!:hover, a.hover\:#{$name}\!:hover * {color:lighten(text-color($color), 10%) !important;}
+  a.hover\:#{$name}\!:hover {background-color:$color !important;}
+}
+@include min-max($selector:$bg-white-opacity, $percent:100, $min:.1, $max:.95, $step:.05, $bg:true);
+@include min-max($selector:$bg-black-opacity, $percent:100, $min:.1, $max:.95, $step:.05, $bg:true, $color-val:black);
+@include min-max($selector:str-slice($bg-white-opacity, 2, 18), $percent:100, $min:.1, $max:.95, $step:.05, $bg:true, $prefix:$hover, $prefix-sign:\:, $suffix:":hover");
+@include min-max($selector:str-slice($bg-black-opacity, 2, 18), $percent:100, $min:.1, $max:.95, $step:.05, $bg:true, $color-val:black, $prefix:$hover, $prefix-sign:\:, $suffix:":hover");
+
+#{$bg-img-gradient} {
+  background: linear-gradient(to right, rgba(213, 227, 230,0.8) 0%, rgba(213, 227, 230,0.9) 50%, rgba(213, 227, 230,0.8) 100%), url(../img/blank.gif) no-repeat center center;
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url(../img/blank.gif) no-repeat center center;
+  background-size: cover;
+  box-shadow: inset 0 2px 50px 2px rgba(74, 123, 134, 0.5);
+}
+
+/*---------- Opacity ------------------------------*/
+@include min-max($selector:$opacity-name, $percent:100, $min:.01, $max:.09, $step:.01, $opacity:true);
+@include min-max($selector:$opacity-name, $percent:100, $min:.1, $max:.9, $step:.1, $opacity:true);
+
+/*---------- Display & Visibility ------------------------------*/
+#{$inline-block} {display:inline-block;}
+#{$empty}, #{$ifEmpty}:empty {display:none;}
+#{$ifEmpty}[class*=border]:empty {border: none !important;}
+
+/*---------- Border ------------------------------*/
+*, *::before, *::after {box-sizing: border-box;} //prevent the errors of the padding changing width
+@include min-max($selector:$border-white-opacity, $percent:100, $min:.01, $max:.09, $step:.01, $border-opacity:true, $child:true, $childSelector:", * , *::before");
+@include min-max($selector:$border-white-opacity, $percent:100, $min:.1, $max:.9, $step:.1, $border-opacity:true, $child:true, $childSelector:", * , *::before");
+@include min-max($selector:$border-black-opacity, $percent:100, $min:.01, $max:.09, $step:.01, $border-opacity:true, $border-color:black, $child:true, $childSelector:", * , *::before");
+@include min-max($selector:$border-black-opacity, $percent:100, $min:.1, $max:.9, $step:.1, $border-opacity:true, $border-color:black, $child:true, $childSelector:", * , *::before");
+@include min-max($selector:$border-white-opacity, $percent:100, $min:.01, $max:.09, $step:.01, $border-opacity:true, $important:true, $child:true, $childSelector:", * , *::before");
+@include min-max($selector:$border-white-opacity, $percent:100, $min:.1, $max:.9, $step:.1, $border-opacity:true, $important:true, $child:true, $childSelector:", * , *::before");
+@include min-max($selector:$border-black-opacity, $percent:100, $min:.01, $max:.09, $step:.01, $border-opacity:true, $border-color:black, $important:true, $child:true, $childSelector:", * , *::before");
+@include min-max($selector:$border-black-opacity, $percent:100, $min:.1, $max:.9, $step:.1, $border-opacity:true, $border-color:black, $important:true, $child:true, $childSelector:", * , *::before");
+
+#{$border}2, #{$border}2 li a {border-width:2px}
+#{$border}3, #{$border}3 li a {border-width:3px}
+#{$border}4, #{$border}4 li a {border-width:4px}
+#{$bottom-line} {border-bottom: 1px solid $color-border; margin-bottom:$space-l; padding-bottom:$space}
+
+#{$border-group} {
+  &>* {@include bordered(); margin-left: -1px;}
+}
+
+/*---------- uk-grid-divider ------------------------------*/
+#{$divider-dashed} {
+  &#{$uk-grid-divider}>:not(#{$uk-uk-first-column})::before, &#{$uk-grid-divider}#{$uk-grid-stack}>#{$uk-grid-margin}::before {@include bordered($style:dashed)}
+}
+#{$divider-child}>:not(:last-child) {@include bordered($property:border-right)}
+
+/*---------- Space ------------------------------*/
+*:last-child:not([class*=mb]):not([class*=\:mb]):not([class*=my]):not([class*=\:my]):not([class*=uk-position]):not([class*=uk-margin]) {margin-bottom: 0;}
+#{$margin-x-child}>:not(:last-child) {@include space($property:margin-right, $size:$space)}
+#{$margin-x-child-m}>:not(:last-child) {@include space($property:margin-right, $size:$space-m)}
+#{$margin-x-child-l}>:not(:last-child) {@include space($property:margin-right, $size:$space-l)}
+#{$margin-y-child}>:not(:last-child):not(#{$footer}) ,#{$margin-y-child-even}>:nth-child(even):not(:last-child):not(#{$footer}) {@include space($property:margin-bottom, $size:$space)}
+#{$margin-y-child-m}>:not(:last-child):not(#{$footer}) ,#{$margin-y-child-even-m}>:nth-child(even):not(:last-child):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-m)}
+#{$margin-y-child-l}>:not(:last-child):not(#{$footer}) ,#{$margin-y-child-even-l}>:nth-child(even):not(:last-child):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-l)}
+#{$margin-y-all-child}>:not(#{$footer}) ,#{$margin-y-all-child-even}>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space)}
+#{$margin-y-all-child-m}>:not(#{$footer}) ,#{$margin-y-all-child-even-m}>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-m)}
+#{$margin-y-all-child-l}>:not(#{$footer}) ,#{$margin-y-all-child-even-l}>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-l)}
+@include min-max($selector:$left, $min:5, $max:50, $step:5, $property:true, $property-name:left);
+@include min-max($selector:$top, $min:5, $max:50, $step:5, $property:true, $property-name:top);
+@include min-max($selector:$right, $min:5, $max:50, $step:5, $property:true, $property-name:right);
+@include min-max($selector:$bottom, $min:5, $max:50, $step:5, $property:true, $property-name:bottom);
+
+/*uk-@s*/
+@media (min-width:640px) {
+  #{$margin-x-child}\@s>:not(:last-child) {@include space($property:margin-right, $size:$space)}
+  #{$margin-x-child-m}\@s>:not(:last-child) {@include space($property:margin-right, $size:$space-m)}
+  #{$margin-x-child-l}\@s>:not(:last-child) {@include space($property:margin-right, $size:$space-l)}
+  #{$margin-y-child}\@s>:not(:last-child):not(#{$footer}) ,#{$margin-y-child-even}\@s>:nth-child(even):not(:last-child):not(#{$footer}) {@include space($property:margin-bottom, $size:$space)}
+  #{$margin-y-child-m}\@s>:not(:last-child):not(#{$footer}) ,#{$margin-y-child-even-m}\@s>:nth-child(even):not(:last-child):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-m)}
+  #{$margin-y-child-l}\@s>:not(:last-child):not(#{$footer}) ,#{$margin-y-child-even-l}\@s>:nth-child(even):not(:last-child):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-l)}
+  #{$margin-y-all-child}\@s>:not(#{$footer}) ,#{$margin-y-all-child-even}\@s>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space)}
+  #{$margin-y-all-child-m}\@s>:not(#{$footer}) ,#{$margin-y-all-child-even-m}\@s>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-m)}
+  #{$margin-y-all-child-l}\@s>:not(#{$footer}) ,#{$margin-y-all-child-even-l}\@s>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-l)}
+  @include min-max($selector:$left, $min:5, $max:50, $step:5, $property:true, $property-name:left, $media:\@s);
+  @include min-max($selector:$top, $min:5, $max:50, $step:5, $property:true, $property-name:top, $media:\@s);
+  @include min-max($selector:$right, $min:5, $max:50, $step:5, $property:true, $property-name:right, $media:\@s);
+  @include min-max($selector:$bottom, $min:5, $max:50, $step:5, $property:true, $property-name:bottom, $media:\@s);
+}
+
+/*uk-@m*/
+@media (min-width:960px) {
+  #{$margin-x-child}\@m>:not(:last-child) {@include space($property:margin-right, $size:$space)}
+  #{$margin-x-child-m}\@m>:not(:last-child) {@include space($property:margin-right, $size:$space-m)}
+  #{$margin-x-child-l}\@m>:not(:last-child) {@include space($property:margin-right, $size:$space-l)}
+  #{$margin-y-child}\@m>:not(:last-child):not(#{$footer}) ,#{$margin-y-child-even}\@m>:nth-child(even):not(:last-child):not(#{$footer}) {@include space($property:margin-bottom, $size:$space)}
+  #{$margin-y-child-m}\@m>:not(:last-child):not(#{$footer}) ,#{$margin-y-child-even-m}\@m>:nth-child(even):not(:last-child):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-m)}
+  #{$margin-y-child-l}\@m>:not(:last-child):not(#{$footer}) ,#{$margin-y-child-even-l}\@m>:nth-child(even):not(:last-child):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-l)}
+  #{$margin-y-all-child}\@m>:not(#{$footer}) ,#{$margin-y-all-child-even}\@m>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space)}
+  #{$margin-y-all-child-m}\@m>:not(#{$footer}) ,#{$margin-y-all-child-even-m}\@m>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-m)}
+  #{$margin-y-all-child-l}\@m>:not(#{$footer}) ,#{$margin-y-all-child-even-l}\@m>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-l)}
+  @include min-max($selector:$left, $min:5, $max:50, $step:5, $property:true, $property-name:left, $media:\@m);
+  @include min-max($selector:$top, $min:5, $max:50, $step:5, $property:true, $property-name:top, $media:\@m);
+  @include min-max($selector:$right, $min:5, $max:50, $step:5, $property:true, $property-name:right, $media:\@m);
+  @include min-max($selector:$bottom, $min:5, $max:50, $step:5, $property:true, $property-name:bottom, $media:\@m);
+}
+
+/*uk-@l*/
+@media (min-width:1200px) {
+  #{$margin-x-child}\@l>:not(:last-child) {@include space($property:margin-right, $size:$space)}
+  #{$margin-x-child-m}\@l>:not(:last-child) {@include space($property:margin-right, $size:$space-m)}
+  #{$margin-x-child-l}\@l>:not(:last-child) {@include space($property:margin-right, $size:$space-l)}
+  #{$margin-y-child}\@l>:not(:last-child):not(#{$footer}) ,#{$margin-y-child-even}\@l>:nth-child(even):not(:last-child):not(#{$footer}) {@include space($property:margin-bottom, $size:$space)}
+  #{$margin-y-child-m}\@l>:not(:last-child):not(#{$footer}) ,#{$margin-y-child-even-m}\@l>:nth-child(even):not(:last-child):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-m)}
+  #{$margin-y-child-l}\@l>:not(:last-child):not(#{$footer}) ,#{$margin-y-child-even-l}\@l>:nth-child(even):not(:last-child):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-l)}
+  #{$margin-y-all-child}\@l>:not(#{$footer}) ,#{$margin-y-all-child-even}\@l>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space)}
+  #{$margin-y-all-child-m}\@l>:not(#{$footer}) ,#{$margin-y-all-child-even-m}\@l>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-m)}
+  #{$margin-y-all-child-l}\@l>:not(#{$footer}) ,#{$margin-y-all-child-even-l}\@l>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-l)}
+  @include min-max($selector:$left, $min:5, $max:50, $step:5, $property:true, $property-name:left, $media:\@l);
+  @include min-max($selector:$top, $min:5, $max:50, $step:5, $property:true, $property-name:top, $media:\@l);
+  @include min-max($selector:$right, $min:5, $max:50, $step:5, $property:true, $property-name:right, $media:\@l);
+  @include min-max($selector:$bottom, $min:5, $max:50, $step:5, $property:true, $property-name:bottom, $media:\@l);
+}
+
+/*uk-@xl*/
+@media (min-width:1600px) {
+  #{$margin-x-child}\@xl>:not(:last-child) {@include space($property:margin-right, $size:$space)}
+  #{$margin-x-child-m}\@xl>:not(:last-child) {@include space($property:margin-right, $size:$space-m)}
+  #{$margin-x-child-l}\@xl>:not(:last-child) {@include space($property:margin-right, $size:$space-l)}
+  #{$margin-y-child}\@xl>:not(:last-child):not(#{$footer}) ,#{$margin-y-child-even}\@xl>:nth-child(even):not(:last-child):not(#{$footer}) {@include space($property:margin-bottom, $size:$space)}
+  #{$margin-y-child-m}\@xl>:not(:last-child):not(#{$footer}) ,#{$margin-y-child-even-m}\@xl>:nth-child(even):not(:last-child):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-m)}
+  #{$margin-y-child-l}\@xl>:not(:last-child):not(#{$footer}) ,#{$margin-y-child-even-l}\@xl>:nth-child(even):not(:last-child):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-l)}
+  #{$margin-y-all-child}\@xl>:not(#{$footer}) ,#{$margin-y-all-child-even}\@xl>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space)}
+  #{$margin-y-all-child-m}\@xl>:not(#{$footer}) ,#{$margin-y-all-child-even-m}\@xl>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-m)}
+  #{$margin-y-all-child-l}\@xl>:not(#{$footer}) ,#{$margin-y-all-child-even-l}\@xl>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-l)}
+  @include min-max($selector:$left, $min:5, $max:50, $step:5, $property:true, $property-name:left, $media:\@xl);
+  @include min-max($selector:$top, $min:5, $max:50, $step:5, $property:true, $property-name:top, $media:\@xl);
+  @include min-max($selector:$right, $min:5, $max:50, $step:5, $property:true, $property-name:right, $media:\@xl);
+  @include min-max($selector:$bottom, $min:5, $max:50, $step:5, $property:true, $property-name:bottom, $media:\@xl);
+}
+
+/*---------- List ------------------------------*/
+#{$list-striped} {
+  &>li {@include position-index($z:1); @include space($property:padding); @include bordered($property:border-bottom)}
+  &>li:first-child {@include bordered($property:border-top)}
+  &>li:nth-of-type(odd) {background:$color-light}
+}
+#{$list-horizontal} {
+  display:block;
+  list-style:none;
+  @include margin-padding($m:0, $p:$space-s 0);
+  li {
+    display:inline-block;
+    float:none;
+    @include space($property:margin-left, $size:calc(-4rem/16));
+    a {
+      @include space($property:padding, $size:0 $space-s);
+      &:hover {text-decoration:none;}
+    }
+  }
+}
+#{$list-decimal} {
+  @include list-counter($reset:true);
+  &>li:before {@include list-counter;}
+  &>li {@include space($property:margin-bottom, $size:$space-m)}
+}
+#{$list-decimal-ch} {list-style-type:cjk-ideographic; padding-left: 30px;}
+#{$list-decimal-row} {
+  @include list-counter($reset:true); @include space($property:padding, $size:0);
+  &>li:before {@include list-counter($display:block);}
+  &#{$list-badge}>li {
+    position:relative; @include space($property:padding-top, $size:calc(45rem/16));
+    &:before {
+      @include list-counter($display:inline-block); @include pseudo-content ($pos:absolute, $l:$space-m, $t:$space-m, $background:true, $radius:$radius-default, $padding:0 calc(7rem/16));
+    }
+  }
+  &#{$list-badge}#{$list-badge-r}>li {
+    @include space($property:padding-top, $size:$space-m);
+    &:before {left:auto; right:$space-m;}
+  }
+  &#{$list-badge}#{$list-badge-r}#{$list-badge-margin-s}>li:before {right:$space;}
+  &#{$list-badge}#{$list-badge-divder}>li {
+    @include space($property:padding-top, $size:calc(65rem/16));
+    &:after {
+      @include pseudo-content ($display:block, $pos:absolute, $content:true, $l:0, $t:calc(50rem/16), $r:0, $background:true, $radius:0, $margin:0 $space-m, $h:1px);
+    }
+  }
+  &#{$list-badge}#{$list-badge-margin-s}>li {
+    @include space($property:padding-top, $size:0);
+    &:before {top:$space; left:$space;}
+  }
+  &#{$list-badge}#{$uk-list-striped}>li#{$uk-alert} {
+    background:transparent;
+    border:none;
+    margin:0;
+    color:inherit;
+    @include bordered($property:border-bottom);
+    &:first-child {@include bordered($property:border-top)}
+    &:nth-of-type(odd) {background:$color-light;}
+  }
+}
+#{$list-dot}, #{$list-arrow} {
+  // $content-val:unquote("\"\\f111\"");
+  list-style:none;
+  &>li {position:relative; @include space($property:padding-left, $size:$space-xl);}
+}
+#{$list-dot} {
+  &>li:before {@include pseudo-content($pos:absolute, $content:true, $content-val:"•", $icon:fa, $l:0, $padding:0);}
+}
+#{$list-arrow} {
+  &>li:before {@include pseudo-content($pos:absolute, $content:true, $content-val:"▸", $icon:fa, $l:0, $padding:0);}
+}
+#{$list-vline} {
+  &>li:not(:last-child):after {@include pseudo-content($pos:absolute, $content:true, $content-val:│, $padding:0 $space-s);}
+}
+#{$list-btmline} {
+  &>li:not(:last-child) {@include space($property:margin-bottom); @include space($property:padding, $size:$space-m 0 $space-m $space);}
+}
+
+[class*=#{str-slice($list-tabs, 2, -1)}] {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  >li {
+    position: relative;
+    display: block;
+    width: 100%;
+    color: $color-text;
+    text-align: inherit;
+    margin-bottom: -1px;
+    background-color: white;
+    border: 1px solid $color-border;
+    &:first-child {
+      border-top-left-radius: .25rem;
+      border-top-right-radius: .25rem;
+    }
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom-right-radius: .25rem;
+      border-bottom-left-radius: .25rem;
+    }
+    a {color:$color-text;}
+    &>*:not(ul), a {padding:$space-m}
+    & li a {padding:$space-m $space-m+10}
+    & li li a {padding:$space-m $space-m+20}
+    &#{$active}>a, & a:hover, &#{$uk-parent}#{$uk-open}>a {
+      color: text-color($color-light);
+      background-color: $color-light;
+    }
+    &#{$active}, & #{$active}>a, &#{$uk-parent}#{$uk-open}>a {
+      font-weight: 300;
+    }
+    &#{$uk-nav-header} {
+      font-size: 1rem;
+      margin-top: 0;
+      padding: 0;
+      >*:not(ul) {font-weight: 500 !important;}
+    }
+  }
+}
+#{$list-tabs-bullet} {
+  >li {
+    &#{$uk-nav-header}>*:not(ul) {
+      &, * {font-weight: 500;}
+      &::before {content: "•"; padding-right: calc(6rem/16);}
+    }
+  }
+}
+#{$nav-header-dotted} {
+  >li {
+    &#{$uk-nav-header}>*:not(ul) {
+      & {width: 100%;}
+      &, * {font-weight: 500;}
+      &::after {content: ""; display: block; @include bordered($property:border-bottom, $style:dotted, $color:$color-border-dark)}
+      &:hover {text-decoration: none !important;}
+      &:hover::after {content: ""; display: block; @include bordered($property:border-bottom, $color:black)}
+    }
+  }
+}
+
+/*---------- Indent ------------------------------*/
+#{$hanging-indent} {@include indent($margin:calc(10rem/16), $flex:true)}
+#{$listFaIcon-indent} {@include indent($padding:1.25rem, $indent:-1.25rem); &>*, &>*::after {display: inline !important;}}
+#{$listFaIcon-indent}-2 {@include indent($padding:2rem, $indent:-2rem)}
+#{$listFaIcon-indent}-3 {@include indent($padding:3rem, $indent:-3rem)}
+#{$listFaIcon-indent}-4 {@include indent($padding:4rem, $indent:-4rem)}
+#{$reset-indent} {display:inherit;}
+
+/*---------- Width & Height & Scroll ------------------------------*/
+#{$width} {@include grid-width}
+#{$width} {@include grid-width($important:true)}
+// #{$min-width} {@include min-width}
+// #{$min-width} {@include min-width($important:true)}
+// #{$max-width} {@include max-width}
+// #{$max-width} {@include max-width($important:true)}
+#{$min-width} {@include grid-width($max:30, $property:min-width)}
+#{$min-width} {@include grid-width($max:30, $property:min-width, $important:true)}
+#{$max-width} {@include grid-width($max:30, $property:max-width)}
+#{$max-width} {@include grid-width($max:30, $property:max-width, $important:true)}
+@include min-max($selector:$min-width, $min:10, $max:1000, $step:5, $property:true, $property-name:min-width, $unit:true, $unit-val:px);
+@include min-max($selector:$max-width, $min:10, $max:1000, $step:5, $property:true, $property-name:max-width, $unit:true, $unit-val:px);
+@include min-max($selector:$min-width, $min:10, $max:1000, $step:5, $property:true, $property-name:min-width, $unit:true, $unit-val:px, $important:true);
+@include min-max($selector:$max-width, $min:10, $max:1000, $step:5, $property:true, $property-name:max-width, $unit:true, $unit-val:px, $important:true);
+@include min-max($selector:$min-height, $min:10, $max:1000, $step:1, $property:true, $property-name:min-height, $unit:true, $unit-val:px);
+@include min-max($selector:$max-height, $min:10, $max:1000, $step:5, $property:true, $property-name:max-height, $unit:true, $unit-val:px);
+@include min-max($selector:$min-height, $min:10, $max:1000, $step:1, $property:true, $property-name:min-height, $unit:true, $unit-val:px, $important:true);
+@include min-max($selector:$max-height, $min:10, $max:1000, $step:5, $property:true, $property-name:max-height, $unit:true, $unit-val:px, $important:true);
+
+/*uk-@s*/
+@media (min-width:640px) {
+  #{$width} {@include grid-width($media:\@s)}
+  #{$width} {@include grid-width($important:true, $media:\@s)}
+  // #{$min-width} {@include min-width($media:\@s)}
+  // #{$min-width} {@include min-width($important:true, $media:\@s)}
+  #{$min-width} {@include grid-width($max:30, $property:min-width, $media:\@s)}
+  #{$min-width} {@include grid-width($max:30, $property:min-width, $important:true, $media:\@s)}
+  #{$max-width} {@include grid-width($max:30, $property:max-width, $media:\@s)}
+  #{$max-width} {@include grid-width($max:30, $property:max-width, $important:true, $media:\@s)}
+  @include min-max($selector:$min-width, $min:10, $max:1000, $step:5, $property:true, $property-name:min-width, $unit:true, $unit-val:px, $media:\@s);
+  @include min-max($selector:$max-width, $min:10, $max:1000, $step:5, $property:true, $property-name:max-width, $unit:true, $unit-val:px, $media:\@s);
+  @include min-max($selector:$min-width, $min:10, $max:1000, $step:5, $property:true, $property-name:min-width, $unit:true, $unit-val:px, $media:\@s, $important:true);
+  @include min-max($selector:$max-width, $min:10, $max:1000, $step:5, $property:true, $property-name:max-width, $unit:true, $unit-val:px, $media:\@s, $important:true);
+  @include min-max($selector:$min-height, $min:10, $max:1000, $step:1, $property:true, $property-name:min-height, $unit:true, $unit-val:px, $media:\@s);
+  @include min-max($selector:$max-height, $min:10, $max:1000, $step:5, $property:true, $property-name:max-height, $unit:true, $unit-val:px, $media:\@s);
+  @include min-max($selector:$min-height, $min:10, $max:1000, $step:1, $property:true, $property-name:min-height, $unit:true, $unit-val:px, $media:\@s, $important:true);
+  @include min-max($selector:$max-height, $min:10, $max:1000, $step:5, $property:true, $property-name:max-height, $unit:true, $unit-val:px, $media:\@s, $important:true);
+}
+
+/*uk-@m*/
+@media (min-width:960px) {
+  #{$width} {@include grid-width($media:\@m)}
+  #{$width} {@include grid-width($important:true, $media:\@m)}
+  // #{$min-width} {@include min-width($media:\@m)}
+  // #{$min-width} {@include min-width($important:true, $media:\@m)}
+  #{$min-width} {@include grid-width($max:30, $property:min-width, $media:\@m)}
+  #{$min-width} {@include grid-width($max:30, $property:min-width, $important:true, $media:\@m)}
+  #{$max-width} {@include grid-width($max:30, $property:max-width, $media:\@m)}
+  #{$max-width} {@include grid-width($max:30, $property:max-width, $important:true, $media:\@m)}
+  @include min-max($selector:$min-width, $min:10, $max:1000, $step:5, $property:true, $property-name:min-width, $unit:true, $unit-val:px, $media:\@m);
+  @include min-max($selector:$max-width, $min:10, $max:1000, $step:5, $property:true, $property-name:max-width, $unit:true, $unit-val:px, $media:\@m);
+  @include min-max($selector:$min-width, $min:10, $max:1000, $step:5, $property:true, $property-name:min-width, $unit:true, $unit-val:px, $media:\@m, $important:true);
+  @include min-max($selector:$max-width, $min:10, $max:1000, $step:5, $property:true, $property-name:max-width, $unit:true, $unit-val:px, $media:\@m, $important:true);
+  @include min-max($selector:$min-height, $min:10, $max:1000, $step:1, $property:true, $property-name:min-height, $unit:true, $unit-val:px, $media:\@m);
+  @include min-max($selector:$max-height, $min:10, $max:1000, $step:5, $property:true, $property-name:max-height, $unit:true, $unit-val:px, $media:\@m);
+  @include min-max($selector:$min-height, $min:10, $max:1000, $step:1, $property:true, $property-name:min-height, $unit:true, $unit-val:px, $media:\@m, $important:true);
+  @include min-max($selector:$max-height, $min:10, $max:1000, $step:5, $property:true, $property-name:max-height, $unit:true, $unit-val:px, $media:\@m, $important:true);
+}
+
+/*uk-@l*/
+@media (min-width:1200px) {
+  #{$width} {@include grid-width($media:\@l)}
+  #{$width} {@include grid-width($important:true, $media:\@l)}
+  // #{$min-width} {@include min-width($media:\@l)}
+  // #{$min-width} {@include min-width($important:true, $media:\@l)}
+  #{$min-width} {@include grid-width($max:30, $property:min-width, $media:\@l)}
+  #{$min-width} {@include grid-width($max:30, $property:min-width, $important:true, $media:\@l)}
+  #{$max-width} {@include grid-width($max:30, $property:max-width, $media:\@l)}
+  #{$max-width} {@include grid-width($max:30, $property:max-width, $important:true, $media:\@l)}
+  @include min-max($selector:$min-width, $min:10, $max:1000, $step:5, $property:true, $property-name:min-width, $unit:true, $unit-val:px, $media:\@l);
+  @include min-max($selector:$max-width, $min:10, $max:1000, $step:5, $property:true, $property-name:max-width, $unit:true, $unit-val:px, $media:\@l);
+  @include min-max($selector:$min-width, $min:10, $max:1000, $step:5, $property:true, $property-name:min-width, $unit:true, $unit-val:px, $media:\@l, $important:true);
+  @include min-max($selector:$max-width, $min:10, $max:1000, $step:5, $property:true, $property-name:max-width, $unit:true, $unit-val:px, $media:\@l, $important:true);
+  @include min-max($selector:$min-height, $min:10, $max:1000, $step:1, $property:true, $property-name:min-height, $unit:true, $unit-val:px, $media:\@l);
+  @include min-max($selector:$max-height, $min:10, $max:1000, $step:5, $property:true, $property-name:max-height, $unit:true, $unit-val:px, $media:\@l);
+  @include min-max($selector:$min-height, $min:10, $max:1000, $step:1, $property:true, $property-name:min-height, $unit:true, $unit-val:px, $media:\@l, $important:true);
+  @include min-max($selector:$max-height, $min:10, $max:1000, $step:5, $property:true, $property-name:max-height, $unit:true, $unit-val:px, $media:\@l, $important:true);
+}
+
+/*uk-@xl*/
+@media (min-width:1600px) {
+  #{$width} {@include grid-width($media:\@xl)}
+  #{$width} {@include grid-width($important:true, $media:\@xl)}
+  // #{$min-width} {@include min-width($media:\@xl)}
+  // #{$min-width} {@include min-width($important:true, $media:\@xl)}
+  #{$min-width} {@include grid-width($max:30, $property:min-width, $media:\@xl)}
+  #{$min-width} {@include grid-width($max:30, $property:min-width, $important:true, $media:\@xl)}
+  #{$max-width} {@include grid-width($max:30, $property:max-width, $media:\@xl)}
+  #{$max-width} {@include grid-width($max:30, $property:max-width, $important:true, $media:\@xl)}
+  @include min-max($selector:$min-width, $min:10, $max:1000, $step:5, $property:true, $property-name:min-width, $unit:true, $unit-val:px, $media:\@xl);
+  @include min-max($selector:$max-width, $min:10, $max:1000, $step:5, $property:true, $property-name:max-width, $unit:true, $unit-val:px, $media:\@xl);
+  @include min-max($selector:$min-width, $min:10, $max:1000, $step:5, $property:true, $property-name:min-width, $unit:true, $unit-val:px, $media:\@xl, $important:true);
+  @include min-max($selector:$max-width, $min:10, $max:1000, $step:5, $property:true, $property-name:max-width, $unit:true, $unit-val:px, $media:\@xl, $important:true);
+  @include min-max($selector:$min-height, $min:10, $max:1000, $step:1, $property:true, $property-name:min-height, $unit:true, $unit-val:px, $media:\@xl);
+  @include min-max($selector:$max-height, $min:10, $max:1000, $step:5, $property:true, $property-name:max-height, $unit:true, $unit-val:px, $media:\@xl);
+  @include min-max($selector:$min-height, $min:10, $max:1000, $step:1, $property:true, $property-name:min-height, $unit:true, $unit-val:px, $media:\@xl, $important:true);
+  @include min-max($selector:$max-height, $min:10, $max:1000, $step:5, $property:true, $property-name:max-height, $unit:true, $unit-val:px, $media:\@xl, $important:true);
+}
+
+#{$overflow-hidden} {@include overflow-hidden($mask:true)}
+#{$truncate} {@include ellipsis($lineCount:3, $truncate:true)}
+#{$ellipsis} {@include ellipsis($lineCount:3)}
+
+/*---------- Aspect Ratio - padding-top:calc(100%*height/width) ------------------------------*/
+#{$aspect} {
+  &#{$not-uk-width} {width:100%; padding-top:100%;}
+  // &:before {@include pseudo-content($display:block, $content:true); padding-top:100%;}
+  &#{$ratio}3\/4 {padding-top:calc(100%*4/3);}
+  &#{$ratio}9\/16 {padding-top:calc(100%*16/9);}
+  &#{$ratio}9\/21 {padding-top:calc(100%*21/9);}
+  &#{$ratio}4\/3 {padding-top:calc(100%*3/4);}
+  &#{$ratio}16\/9 {padding-top:calc(100%*9/16);}
+  &#{$ratio}21\/9 {padding-top:calc(100%*9/21);}
+  >* {@include cover}
+}
+
+/*---------- Pseudo ------------------------------*/
+// @include pseudo-content($display:inherit, $pos:inherit, $content:$boolean, $content-val:"", $property:"", $property-val:$space, $fontsize:inherit, $icon:"", $font:$font-fa, $weight:900, $color:inherit, $background:$boolean, $bg:$color-grey-light, $bg-txt:true, $l:auto, $t:auto, $r:auto, $b:auto, $radius:0, $margin:inherit, $padding:inherit, $line:inherit, $h:auto, $pointer-off:$boolean);
+
+#{$pseudo-item-pipe}:before {@include pseudo-content($content:true, $content-val:"▍", $property:padding-right)}
+#{$pseudo-item-pipe},#{$pseudo-item-circle},#{$pseudo-item-dot},#{$pseudo-item-link} {@include space($property:margin-right, $size:$space-l)}
+#{$pseudo-item-circle}:before {@include pseudo-content($display:inline-block, $content:true, $content-val:"○", $property:margin-right, $property-val:1px); transform:scale(0.6) translate($space-negative, 1px);}
+#{$pseudo-item-dot}:before {@include pseudo-content($display:inline-block, $content:true, $content-val:"·"); transform:scale(3) translate(1px, -1px); @include space($property:margin-left, $size:-17px); @include space($property:margin-right, $size:12px)}
+#{$pseudo-item-dot} {@include space($property:padding-left, $size:17px)}
+#{$pseudo-item-link} {@include pseudo-content($content:true, $content-val:"§", $property:padding-right, $color:$color-text-light)}
+#{$pseudo-fa-angle-right}:before {@include pseudo-content($content:true, $content-val:"\f105", $icon:fa)}
+// $icons-fa:
+//   $pseudo-fa-angle-right "\f105" "900",
+//   ".start" "\f12e" "400",
+//   ".stop" "\f12f" "400";
+// @each $name, $glyph, $weight-val in $icons-fa {
+//   #{$name}:before {
+//     @include pseudo-content($content:true, $content-val:$glyph, $icon:fa, $weight:$weight-val);
+//   }
+// }
+#{$pseudo-parentheses}:before {@include pseudo-content($content:true, $content-val:"("); @include space($property:margin-left, $size:3px); @include space($property:padding-right, $size:1px)}
+#{$pseudo-parentheses}:after {@include pseudo-content($content:true, $content-val:")"); @include space($property:padding-left, $size:1px)}
+#{$pseudo-line-vertical}:not(:last-child):after {@include pseudo-content($content:true, $content-val:"│", $property:padding, $property-val:0 $space)}
+#{$pseudo-slash}:not(:last-child):after {@include pseudo-content($content:true, $content-val:"/", $property:padding-left, $property-val:$space)}
+#{$pseudo-bottom-line}:not(:last-child):after {@include pseudo-content($pos:absolute, $content:true, $property:height, $property-val:1px, $background:true, $bg:$color-grey-light, $bg-txt:false, $l:0, $r:0, $b:0)}
+#{$pseudo-comma}:not(:last-child):after {@include pseudo-content($content:true, $content-val:",", $property:padding-right, $property-val:$space-m)}
+#{$pseudo-comma-ch}:not(:last-child):after {@include pseudo-content($content:true, $content-val:"、")}
+#{$pseudo-comma-dot}:not(:last-child):after {@include pseudo-content($display:inline-block, $content:true, $content-val:"·"); @include space($property:margin-left, $size:$space); @include space($property:margin-right, $size:$space); transform:scale(2) translate(1px, -1px)}
+#{$pseudo-arrow}:not(:last-child):after {@include pseudo-content($content:true, $content-val:"→"); @include space($property:padding-left, $size:$space); @include space($property:padding-right, $size:$space)}
+#{$pseudo-plus}:not(:last-child):after {@include pseudo-content($content:true, $content-val:"+"); @include space($property:padding-left, $size:$space); @include space($property:padding-right, $size:$space)}
+ /*The below works with <q> */
+#{$quotes-ch} {quotes:"「" "」";}
+#{$quotes-dashes} {quotes:"- " " -";}
+
+/*---------- Cursor Type ------------------------------*/
+[disabled]:hover {cursor: default;}
+
+/*---------- Circle Checkbox - white ------------------------------*/
+#{$checkbox-circle} {
+  position: absolute; opacity: 0;
+  &+label {position: relative; cursor: pointer; padding: 0;}
+  &+label:before {content:""; margin-right:$space; display:inline-block; vertical-align:baseline; width:calc(13rem/16); height:calc(13rem/16); border-radius: 50%; @include bordered}
+  &:hover+label:before {background:$color-border}
+  &:focus+label:before {@include box-shadow($outline:true)}
+  &:checked+label:before {@include pseudo-content($content:true, $content-val:"\f00c", $property:text-align, $property-val:center, $fontsize:calc(12rem/16), $icon:fa, $color:inherit, $line:calc(18rem/16))}
+  &:disabled+label {
+    color: $color-grey; cursor: auto;
+    &:before {background: $color-grey-light;}
+  }
+}
+
+/*---------- Section & Container ------------------------------*/
+section {
+  padding:$space-l 0;
+  @media (min-width:640px) {
+    padding:$space-l;
+  }
+  @media (min-width:960px) {
+    padding:$space-xl $space-l;
+  }
+}
+
+#{$container-responsive}, #{$container-responsive}\@s, #{$container-responsive}\@m {
+  // padding: 0 $space-m;
+  padding: 0;
+  &>#{$uk-card} {padding: $space-l;}
+  &>#{$uk-card}, &#{$mc-card}> {border: none; border-radius: 0; box-shadow: none;}
+}
+#{$container-responsive}\@s {
+  @media (min-width:640px) {
+    // padding: 0 15px;
+    &>#{$uk-card} {padding: 30px; @include uk-box-shadow}
+    &>#{$uk-card}#{$uk-card-small} {padding: 20px;}
+    &>#{$uk-card}#{$uk-card-large} {padding: 70px;}
+    &>#{$uk-card}#{$mc-card} {
+      margin: .5rem 0 1rem 0;
+      border-radius: 2px;
+      #{$mc-card-content} {
+        padding: 24px;
+        border-radius: 0 0 2px 2px;
+      }
+    }
+  }
+}
+#{$container-responsive}\@m {
+  @media (min-width:960px) {
+    // padding: 0 15px;
+    &>#{$uk-card} {padding: 30px; @include uk-box-shadow}
+    &>#{$uk-card}#{$uk-card-small} {padding: 20px;}
+    &>#{$uk-card}#{$uk-card-large} {padding: 70px;}
+    &>#{$uk-card}#{$mc-card} {
+      margin: .5rem 0 1rem 0;
+      border-radius: 2px;
+      #{$mc-card-content} {
+        padding: 24px;
+        border-radius: 0 0 2px 2px;
+      }
+    }
+  }
+}
+
+/*---------- Nav ------------------------------*/
+nav#{$nav-reset} {
+  background: transparent;
+  color: text-color($color-white);
+  // a {color: $color-link;}
+}
+
+#{$sub-nav} {
+  #{$tailwind-bg-white} & *, #{$bg-white} & * {color:$color-text;}
+  * {line-height: 1;}
+  #{$hover-bg} {
+    &:hover, &#{$active} {background:black;}
+    &:hover, &:hover>*, &#{$active}>*, >button:focus {color:white !important; text-decoration:none;}
+    >* {
+      padding: $space $space-m;
+    }
+    >button {
+      font-size: inherit;
+      &:focus {background:black;}
+    }
+  }
+}
+
+#{$bg-black} {
+  &>button {font-size: inherit; line-height: inherit; background: transparent; vertical-align: inherit;}
+  &#{$active}>a, &>a:hover, &>a:hover>*, &#{$active}>span>a, &>span>a:hover, &#{$active}>button, &>button:hover, &#{$active}>span>button, &>span>button:hover {background: black !important; color: white !important; text-decoration: none !important; transition: none;}
+  &>span>a:hover {background: $color-link;}
+  &>* {line-height: 1; padding: $space;}
+}
+
+/*---------- Logo ------------------------------*/
+$logo-width:120px;
+$logo-max-width:550px;
+$logo-min-height:40px;
+$logo-height:50px;
+$logo-max-height:60px;
+$logo-up-size:15px;
+$logo-ratio:floor(128/65*100)/100;
+// %max-height {max-height: $logo-height;}
+#{$logo-bg} {
+  background: url(../img/logo.svg) no-repeat left center;
+  background-size: contain;
+  max-height: $logo-min-height;
+  padding: $space 0;
+  #{$footer} & {background-position-y: top; max-height: $logo-max-height;}
+  @media (min-width:960px) {max-height:inherit; margin-left: $space;}
+}
+#{$logo-position} {
+  #{$footer} &, #{$footer} #{$logo-bg} {min-height: $logo-min-height;}
+  &, &-up {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @media (min-width:960px) {min-height: $logo-max-height; #{$logo-bg} {max-width: $logo-max-width;}}
+  }
+  &-up {
+    // min-height: $logo-min-height;
+    #{$uk-position-cover} {
+      @media (min-width:960px) {background-size: 100%;}
+    }
+    #{$logo-bg} {@media (min-width:1200px) {margin-top: -$logo-up-size;}}
+  }
+}
+#{$logo-control} {
+  padding: $space;
+  #{$uk-navbar-toggle} {min-width: 30px; min-height: 30px;}
+  #{$logo-text-control} #{$logo-position} {
+    #{$logo-bg} {@media (min-width:1200px) {background-size: 100% calc(100% - 2px);}}
+    &, &-up {
+      #{$logo-text} {
+        &:hover, & * {text-decoration: none}
+        * {line-height: 1; font-weight: bold;}
+        #{$logo-bg} {width: $logo-width; padding: 0; @media (min-width:1200px) {margin-left: 0;}}
+        #{$logo-bg}+* {margin-left: $space-m;}
+        #{$logo-cht} {line-height: 1.1; font-size: 1.2rem}
+        #{$logo-eng} {font-size: 0.8rem}
+        #{$logo-cht},#{$logo-eng} {width: 100%;}
+      }
+      #{$logo-bg} {background-size: contain; max-width: calc(#{$logo-min-height}*#{$logo-ratio}); max-height: $logo-min-height; >img {max-height: $logo-min-height;} @media (min-width:1200px) {max-width: calc(#{$logo-height}*#{$logo-ratio}); max-height: $logo-height;}}
+      &, #{$logo-bg} {min-height: $logo-min-height; @media (min-width:1200px) {min-height: $logo-height;}}
+    }
+    &-up #{$logo-text} {
+      align-items: center;
+      #{$logo-bg} {
+        width: $logo-width;
+        @media (min-width:1200px) {
+          min-width: calc((#{$logo-height} + #{$logo-up-size}) * #{$logo-ratio});
+          min-height: calc(#{$logo-height} + #{$logo-up-size});
+          background-position-y: calc(50% - 2px);
+          background-size: 100% calc(100% - 2px);
+        }
+        @media (min-width:1600px) {max-width: calc((#{$logo-min-height} + #{$logo-up-size}) * #{$logo-ratio});}}
+    }
+  }
+}
+
+/*---------- Pagination ------------------------------*/
+#{$pagination} a {
+  padding: 0 10px;
+  @media (min-width:640px) {
+    padding: 0 $space-l;
+  }
+}
+
+/*---------- Footer ------------------------------*/
+#{$footer}, #{$footer} *:not([class*=bg]):not([class*=btn]):not([class*=color_]):not([class*=text-]), #{$footer} *:not([class*=bg]):not([class*=btn]):not([class*=color_]):not([class*=text-]) *, footer, footer *:not([class*=bg]):not([class*=btn]):not([class*=color_]):not([class*=text-]), footer *:not([class*=bg]):not([class*=btn]):not([class*=color_]):not([class*=text-]) * {color: text-color($color-blue-grey);}
+#{$footer}, footer {
+  background-color: $color-blue-grey;
+  #{$uk-grid-divider}>:not(#{$uk-uk-first-column})::before, &#{$uk-grid-divider}#{$uk-grid-stack}>#{$uk-grid-margin}::before {border-color: text-color($color-blue-grey);}
+} 
+
+/*---------- Uikit 3 Style
+---------------------------------------------------------------------------------- */
+address, dl, fieldset, figure, ol, p, pre, ul {
+  margin: 0 0 20px 0;
+}
+#{$uk} * {text-transform: inherit !important;}
+
+#{$grid-xsmall} {
+  @include space($property:margin-left, $size:$space-m-negative);
+  &>* {@include space($property:padding-left, $size:$space-m)}
+}
+#{$grid-xxsmall} {
+  @include space($property:margin-left, $size:$space-negative);
+  &>* {@include space($property:padding-left, $size:$space)}
+}
+
+#{$uk-grid} {
+  >#{$uk-width}:first-child>svg.fa-angle-right {
+    margin-left: -6px;
+  }
+}
+
+#{$uk-navbar-toggle} {min-height: 50px;}
+#{$uk-navbar-toggle-icon} {min-width: 50px;}
+
+#{$uk-breadcrumb} a:focus, #{$uk-breadcrumb} a:hover {color: black; text-decoration: underline;}
+
+#{$text-color-black} {
+  &#{$uk-breadcrumb-pseudo}, &#{$uk-breadcrumb}>li>span {color: black;}
+  &#{$uk-breadcrumb-pseudo}, &#{$uk-breadcrumb}>li>span {color: $color-text-dark;}
+}
+
+#{$uk-navbar-nav} {
+  &>li#{$bg-black} {display: flex; align-items: center;}
+  &>li>span {font-size: $fontsize-s;}
+  &>li>a, #{$uk-navbar-item}, #{$uk-navbar-toggle} {height: inherit; padding: 0 $space;}
+}
+
+#{$nav-bar} {
+  &#{$uk-tab}:before {border-bottom: none;}
+  li {float: none;}
+  >li {padding: 0; &#{$active} {background-color: transparent;}}
+  >*>a {color: white ;border-bottom-width: 4px; padding: $space $space-m; margin: 0 $space;}
+  >#{$uk-active}>a, >#{$active}>a, >li>a:focus, >li>a:hover {border-color: white !important; background-color: transparent;}
+}
+
+#{$uk-dropdown-nav} {
+  li a, #{$uk-nav-sub} a {
+    color:$color-link; &:hover {color:$color-link-hover;}
+  }
+  li {
+    a {
+      &:not([class*=underline])::after {content: ""; display: block; @include bordered($property:border-bottom, $style:dotted, $color:transparent)}
+      &:not([class*=underline]):hover {text-decoration: none !important;}
+      &:not([class*=underline]):hover::after {content: ""; display: block; @include bordered($property:border-bottom, $style:dotted, $color:$color-border-dark)}
+    }
+    &#{$active}, &#{$uk-active} {
+      a:not([class*=underline])::after {content: ""; display: block; @include bordered($property:border-bottom, $style:dotted, $color:$color-border-dark)}
+    }
+  }
+  li>span {font-size: $fontsize-s; font-weight: 400;}
+}
+
+#{$uk-subnav} {
+  margin-left: $space-m-negative;
+  &>* {padding-left: $space-m;}
+  &-divider>:nth-child(n+2):not(#{$uk-uk-first-column})::before {margin-right: $space-m;}
+  &-pill>*>:first-child {color: $color-text;}
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* --- Fix lists bullets to hidden in Edge. It's a 1x1 transparent PNG image --- */
+  #{$uk-nav}, #{$uk-nav} ul {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=);}
+}
+
+#{$uk-nav}:not([class*=#{str-slice($list-tabs, 2, -1)}]) li a:hover {background: transparent; >* {text-decoration: none !important;}}
+#{$uk-nav-sub}, ul#{$uk-nav-sub} {padding: 5px 0 5px 15px; & ul {padding-left: 15px;}}
+
+#{$uk-offcanvas-bar-a} {color: inherit;}
+#{$uk-offcanvas-bar} {padding-top: 40px !important;}
+#{$uk-offcanvas-close} {top: 10px;}
+
+#{$uk-slideshow}, #{$uk-slider} {
+  // &#{$uk-light} #{$uk-slidenav}:not([class*=-out]), &#{$uk-light} #{$uk-slidenav}:not([class*=-out]) *, #{$uk-light} #{$uk-slidenav}:not([class*=-out]) * {
+  //   color: rgba(255, 255, 255, .8) !important;
+  // }
+  // &#{$uk-light} #{$uk-slidenav}:not([class*=-out]) {
+  //   background: rgba(0, 0, 0, 0.1);
+  //   &:hover {
+  //     &, * {color: rgba(255, 255, 255, 1) !important;}
+  //     background: rgba(0, 0, 0, 0.2);
+  //   }
+  // }
+  #{$uk-hidden-hover} {visibility: hidden;}
+  &:hover {
+    &#{$uk-light} #{$uk-slidenav}, #{$uk-light} #{$uk-slidenav} {
+      * {color: rgba(255, 255, 255, 0.5) !important; text-shadow: 0 0 5px rgba(0, 0, 0, 0.7) !important;}
+      &-previous:not([class*=-out]) {background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);}
+      &-next:not([class*=-out]) {background: linear-gradient(to left, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);}
+    }
+    #{$uk-hidden-hover} {visibility: visible;}
+  }
+}
+/* purgecss ignore */
+#{$uk-slideshow} #{$uk-light} #{$uk-slidenav} *, #{$uk-slideshow} #{$uk-light} #{$uk-slidenav}:hover *, #{$uk-slider}#{$uk-light} #{$uk-slidenav}:not([class*=-out]):hover *, #{$uk-slider} #{$uk-light} #{$uk-slidenav}:not([class*=-out]):hover *, #{$uk-modal-dialog-lightbox} #{$uk-lightbox-content} {color: rgba(255, 255, 255, 1) !important; text-shadow: 0 0 5px rgba(0, 0, 0, 0.5) !important;}
+
+#{$uk-light} #{$uk-dotnav} {
+  &>*>* {width: $space-l; height: $space-l; border: 1px solid white; @include box-shadow}
+  &>#{$uk-active}>*, &>*>:focus, &>*>:hover {background-color: rgba(255, 255, 255, 1);}
+}
+
+#{$uk-lightbox} {
+  background: rgba(0, 0, 0, 0.8);
+  // #{$uk-lightbox-button} {
+  //   width: calc(100%/10); height: 100vh; margin: 0;
+  // }
+  &#{$uk-active} {
+    #{$uk-lightbox-button} {
+      * {color: rgba(255, 255, 255, 0.7);}
+      // &[uk-slidenav-previous] {background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);}
+      // &[uk-slidenav-next] {background: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);}
+      &:hover {
+        * {color: rgba(255, 255, 255, 1) !important;}
+      }
+    }
+  }
+  #{$uk-lightbox-toolbar} {
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    * {color: rgba(255, 255, 255, 0.7);}
+    #{$uk-close} {
+      &:hover * {color: white !important;}
+    }
+    &#{$uk-position-top} {
+      width: 50px;
+      right: 0;
+      left: auto;
+    }
+  }
+}
+
+/* Pagination */
+#{$uk-pagination} {
+  &>li>a:hover {text-decoration: none;}
+  &#{$pagination-padding-s} {margin-left: $space-m-negative;}
+  &#{$pagination-padding-s}>*, &#{$pagination-bg}>* {padding-left: $space-m;}
+}
+#{$uk-pagination}#{$pagination-bg}>li>a, #{$uk-pagination}#{$pagination-bg}>li>span, #{$pagination-link} {min-width: 16px; padding: 3px 5px; box-sizing: content-box; text-align: center; border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 4px;}
+/** Links */
+#{$uk-pagination}#{$pagination-bg}>li>a, #{$pagination-link} {background: #f5f5f5; color: #6f6f6f;}
+/** Hover */
+#{$uk-pagination}#{$pagination-bg}>li>a:hover, #{$uk-pagination}#{$pagination-bg}>li>a:focus, #{$pagination-link}:hover {background-color: #fdfdfd; color: #444; outline: none; border-color: rgba(0, 0, 0, 0.16); text-decoration: none;}
+/** OnClick */
+#{$uk-pagination}#{$pagination-bg}>li>a:active {background-color: #eee; color: #444;}
+/** Active */
+#{$uk-pagination}#{$pagination-bg}>#{$uk-active}>span, #{$uk-pagination}#{$pagination-bg}>#{$active}>span, #{$pagination}>#{$active} #{$pagination-link} {background: #989898; color: white; border-color: transparent; box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);}
+/** Disabled */
+#{$uk-pagination}#{$pagination-bg}>#{$uk-disabled}>*, #{$uk-pagination}#{$pagination}>#{$disabled}>*, #{$pagination}>#{$disabled}>* {background-color: #fdfdfd; color: #c5c5c5; border: 1px solid rgba(0, 0, 0, 0.06);}
+#{$uk-pagination}#{$pagination-bg}>li:not(#{$uk-active}):not(#{$uk-disabled})>span {border: none;}
+
+#{$uk-disabled}#{$button} {background: $color-light !important;}
+
+#{$accordion-icon-l}#{$uk-accordion-title}::before {float: none; display: inline-block; vertical-align: bottom; margin-bottom: 2px; margin-right: 5px;}
+#{$accordion-icon-r}#{$uk-accordion-title}::before {float: none;}
+#{$accordion-icon-r}#{$uk-accordion-title}::after {content: ""; display: inline-block; vertical-align: bottom; width: 1.4em; height: 1.4em; margin-left: 5px; margin-bottom: 2px; background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDEzIDEzIj4KICAgIDxyZWN0IGZpbGw9IiM2NjYiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxIiB4PSIwIiB5PSI2Ij48L3JlY3Q+CiAgICA8cmVjdCBmaWxsPSIjNjY2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxMyIgeD0iNiIgeT0iMCI+PC9yZWN0Pgo8L3N2Zz4="); background-repeat: no-repeat; background-position: 50% 50%;}
+#{$uk-open}>#{$accordion-icon-r}#{$uk-accordion-title}::after {background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDEzIDEzIj4KICAgIDxyZWN0IGZpbGw9IiM2NjYiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxIiB4PSIwIiB5PSI2Ij48L3JlY3Q+Cjwvc3ZnPg=="); background-repeat: no-repeat; background-position: 50% 50%;}
+#{$accordion-icon-r-arrow}#{$uk-accordion-title}::after {background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkYXRhLXN2Zz0iY2hldnJvbi1yaWdodCI+PHBvbHlsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxLjAzIiBwb2ludHM9IjcgNCAxMyAxMCA3IDE2Ij48L3BvbHlsaW5lPjwvc3ZnPg=="); margin-bottom: -1px;}
+#{$uk-open}>#{$accordion-icon-r-arrow}#{$uk-accordion-title}::after {background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkYXRhLXN2Zz0iY2hldnJvbi1kb3duIj48cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuMDMiIHBvaW50cz0iMTYgNyAxMCAxMyA0IDciPjwvcG9seWxpbmU+PC9zdmc+");}
+
+#{$uk-table} th {color: #666;}
+@media (max-width: 1119px) {
+#{$uk-table-responsive}#{$table-responsive}\@l thead {display: none;}
+#{$uk-table-responsive}#{$table-responsive}\@l #{$uk-table-link}:not(:last-child)>a, #{$uk-table-responsive}#{$table-responsive}\@l td:not(:last-child):not(#{$uk-table-link}), #{$uk-table-responsive}#{$table-responsive}\@l th:not(:last-child):not(#{$uk-table-link}) {padding-bottom: 5px!important;}
+#{$uk-table-responsive}#{$table-responsive}\@l td, #{$uk-table-responsive}#{$table-responsive}\@l th {width: auto!important; max-width: none!important; min-width: 0!important; overflow: visible!important; white-space: normal!important;}
+#{$uk-table-responsive}#{$table-responsive}\@l, #{$uk-table-responsive}#{$table-responsive}\@l tbody, #{$uk-table-responsive}#{$table-responsive}\@l td, #{$uk-table-responsive}#{$table-responsive}\@l th, #{$uk-table-responsive}#{$table-responsive}\@l tr {display: block;}
+}
+@media (max-width: 1599px) {
+#{$uk-table-responsive}#{$table-responsive}\@xl thead {display: none;}
+#{$uk-table-responsive}#{$table-responsive}\@xl #{$uk-table-link}:not(:last-child)>a, #{$uk-table-responsive}#{$table-responsive}\@xl td:not(:last-child):not(#{$uk-table-link}), #{$uk-table-responsive}#{$table-responsive}\@xl th:not(:last-child):not(#{$uk-table-link}) {padding-bottom: 5px!important;}
+#{$uk-table-responsive}#{$table-responsive}\@xl td, #{$uk-table-responsive}#{$table-responsive}\@xl th {width: auto!important; max-width: none!important; min-width: 0!important; overflow: visible!important; white-space: normal!important;}
+#{$uk-table-responsive}#{$table-responsive}\@xl, #{$uk-table-responsive}#{$table-responsive}\@xl tbody, #{$uk-table-responsive}#{$table-responsive}\@xl td, #{$uk-table-responsive}#{$table-responsive}\@xl th, #{$uk-table-responsive}#{$table-responsive}\@xl tr { display: block;}
+}
+
+#{$uk-checkbox}#{$form-white}, #{$uk-radio}#{$form-white} {background-color: white;}
+#{$uk-checkbox}#{$form-white}:checked, #{$uk-checkbox}#{$form-white}:indeterminate, #{$uk-radio}#{$form-white}:checked {background-color: #1e87f0;}
+#{$uk-input}:disabled, #{$uk-select}:disabled, #{$uk-textarea}:disabled {background-color: #fcfcfc;}
+
+#{$uk-button} {padding: 0 10px;}
+[class*=uk-button].btn-secondary {color: white; background-color: #6c757d;}
+[class*=uk-button].btn-secondary:hover {color: white; background-color: #5a6268;}
+[class*=uk-button].btn-light {color: #212529; background-color: #f8f9fa;}
+[class*=uk-button].btn-light:hover {color: #212529; background-color: #e2e6ea;}
+
+#{$uk-list}#{$list-collapse}>li:nth-child(n+2), #{$uk-list}#{$list-collapse}>li>ul {margin-top: 0;}
+#{$uk-list}#{$list-small}>li:nth-child(n+2), #{$uk-list}#{$list-small}>li>ul {margin-top: 5px;}
+#{$uk-list-bullet}>li {padding-left: 0.75em; &::before {margin-left: -0.75em;}}
+#{$uk-list-bullet}#{$uk-light}>li::before {background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc2JyBoZWlnaHQ9JzYnIHZpZXdCb3g9JzAgMCA2IDYnPjxjaXJjbGUgZmlsbD0nI2ZmZicgY3g9JzMnIGN5PSczJyByPSczJy8+PC9zdmc+');}
+
+#{$uk-grid-divider}#{$grid-divider-stack-remove}#{$uk-grid-stack}>#{$uk-grid-margin}::before {border: none;}
+
+#{$container-expand}#{$uk-container} {padding: 0;}
+
+#{$uk-alert}.badge {margin-top:0; margin-bottom: 5px; padding: 7px 29px 7px 10px;}
+#{$uk-alert}.badge #{$uk-alert}-close {top: calc(14px / 2); right: 7px; opacity: .7;}
+#{$uk-alert}.badge-secondary {color: white; background-color: #6c757d;}
+
+#{$uk-modal}#{$uk-flex-top}#{$uk-open} {display: flex !important;}
+
+#{$uk-form-custom} {width: 50%; min-height: 27px;}
+#{$uk-form-custom} input[type=file]::before {content: ""; display: block; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: white;}
+#{$uk-form-custom} input[type=file]:focus {opacity: 1;}
+#{$uk-form-custom} input[type=file]:focus+.uk-link {z-index: 1; position: absolute; width: 100%; left: 0;}
+#{$uk-form-small}:not(textarea):not([multiple]):not([size]) {padding-right: 25px;}
+
+@media (min-width:640px) {
+#{$uk-width-auto}\@s {flex: inherit;}
+#{$container-expand}#{$uk-container} {padding: 0 30px;}
+}
+@media (min-width:960px) {
+#{$uk-width-auto}\@m {flex: inherit;}
+#{$container-expand}#{$uk-container} {padding: 0 40px;}
+}
+@media (min-width:1200px) {
+#{$uk-width-auto}\@l {flex: inherit;}
+}
+@media (min-width:1600px) {
+#{$uk-width-auto}\@xl {flex: inherit;}
+}
+/*---------- End Uikit 3 Style
+---------------------------------------------------------------------------------- */
+
+/*---------- Fullcalendar Style
+---------------------------------------------------------------------------------- */
+.fc-event {border: none; padding: 0 5px !important;}
+.fc-scroller {height: auto !important;}
+.fc-unthemed td.fc-today {background: #eaeaea; font-weight: 900;}
+@media (max-width:767px) {
+.fc-toolbar {flex-wrap: wrap;}
+.fc-toolbar>*>* {margin: 5px 0;}
+.fc-list-table tr {display: flex;}
+.fc-list-table td {display: block; width: auto; flex: 1 1 auto; white-space: normal;}
+.fc-center h2 {font-size: 1.5rem !important;}
+.fc-button {padding: .4rem .49rem; font-size: .84rem !important;}
+}
+/*---------- End Fullcalendar Style
+---------------------------------------------------------------------------------- */
+
+/*---------- Select2
+---------------------------------------------------------------------------------- */
+.select2 {
+  height: 40px !important;
+  flex: 1 1 auto;
+  .selection, .select2-selection--single {
+    width: 100%;
+    height: 40px;
+    border: 0 none;
+    padding: 0 10px;
+    background: #fff;
+    color: #666;
+    border: 1px solid #e5e5e5;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    // padding-right: 20px;
+    // background-image: url(data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2212%201%209%206%2015%206%22%20%2F%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2212%2013%209%208%2015%208%22%20%2F%3E%0A%3C%2Fsvg%3E%0A);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    .select2-selection {
+      background: transparent !important;
+      border: none !important;
+    }
+    .select2-selection--single .select2-selection__rendered {
+      line-height: 40px;
+    }
+  }
+  .select2-selection--single {
+    height: 38px !important;
+    padding: 0 !important;
+    // padding-right: 10px !important;
+    background-image: none;
+    .select2-selection__arrow {
+      display: none;
+    }
+  }
+}
+.select2-container--open .selection, .select2-dropdown {
+    outline: none;
+    background-color: #fff;
+    color: #666;
+    border-color: #1e87f0;
+}
+.select2-search__field {
+  width: calc(100% - 10px) !important;
+  margin: auto;
+  display: block;
+  border: 1px solid #e5e5e5;
+}
+.select2-results__option:first-child:empty {
+    display: none;
+}
+
+/*---------- End Select2
+---------------------------------------------------------------------------------- */
+
+/*---------- IE10+ ------------------------------*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+#{$uk-grid}>th[class*=uk-width-], #{$uk-grid}>td[class*=uk-width-] {display: block;}
+#{$uk-table-responsive} #{$uk-grid}>td#{$uk-width-1-1} {flex-basis: 100%;}
+#{$uk-dropdown-nav} li>* {display: block !important;}
+#{$height-ie} {height: 100%;}
+#{$uk-nav-divider} {height: 0;}
+input:-ms-input-placeholder,textarea:-ms-input-placeholder{opacity:1} //fix tailwindcss
+}

@@ -1,0 +1,9 @@
+/* If using @import , need install `postcss-import` */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Or using @tailwind , don't need `postcss-import` */
+ /* @tailwind base;
+ @tailwind components;
+ @tailwind utilities;  */

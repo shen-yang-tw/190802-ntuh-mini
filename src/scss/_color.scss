@@ -1,0 +1,46 @@
+@function color-reduce($color) {
+	@if lightness($color) == 0% {
+		@return lighten($color, 10%);
+	} @else if  lightness($color) == 100% {
+		@return lighten($color, -10%);
+	}
+	@else {
+		@return $color;
+	}
+}
+$color-primary:#e9d839 !default;
+$color-primary-text:color-reduce(darken($color-primary, 20%)) !default;
+$color-primary-light:color-reduce(lighten($color-primary, 15%)) !default;
+$color-primary-lighter:color-reduce(lighten($color-primary, 25%)) !default;
+$color-primary-dark:color-reduce(darken($color-primary, 15%)) !default;
+$color-primary-darker:color-reduce(darken($color-primary, 25%)) !default;
+$color-primary-darkest:color-reduce(darken($color-primary, 30%)) !default;
+$color-primary-hover:color-reduce(darken($color-primary, 10%)) !default;
+$color-primary-black:change-color($color-primary, $lightness: 15%) !default;
+$color-secondary:#f38020 !default;
+$color-secondary-text:color-reduce(darken($color-secondary, 20%)) !default;
+$color-secondary-light:color-reduce(lighten($color-secondary, 15%)) !default;
+$color-secondary-lighter:color-reduce(lighten($color-secondary, 25%)) !default;
+$color-secondary-dark:color-reduce(darken($color-secondary, 15%)) !default;
+$color-secondary-darker:color-reduce(darken($color-secondary, 25%)) !default;
+$color-secondary-darkest:color-reduce(darken($color-secondary, 30%)) !default;
+$color-secondary-hover:color-reduce(darken($color-secondary, 10%)) !default;
+$color-secondary-black:change-color($color-secondary, $lightness: 15%) !default;
+$color3:#89c441 !default;
+$color3-text:color-reduce(darken($color3, 20%)) !default;
+$color3-light:color-reduce(lighten($color3, 15%)) !default;
+$color3-lighter:color-reduce(lighten($color3, 25%)) !default;
+$color3-dark:color-reduce(darken($color3, 15%)) !default;
+$color3-darker:color-reduce(darken($color3, 25%)) !default;
+$color3-darkest:color-reduce(darken($color3, 30%)) !default;
+$color3-hover:color-reduce(darken($color3, 10%)) !default;
+$color3-black:change-color($color3, $lightness: 15%) !default;
+$color4:#60b947 !default;
+$color4-text:color-reduce(darken($color4, 20%)) !default;
+$color4-light:color-reduce(lighten($color4, 15%)) !default;
+$color4-lighter:color-reduce(lighten($color4, 25%)) !default;
+$color4-dark:color-reduce(darken($color4, 15%)) !default;
+$color4-darker:color-reduce(darken($color4, 25%)) !default;
+$color4-darkest:color-reduce(darken($color4, 30%)) !default;
+$color4-hover:color-reduce(darken($color4, 10%)) !default;
+$color4-black:change-color($color4, $lightness: 15%) !default;

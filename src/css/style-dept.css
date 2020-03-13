@@ -1,0 +1,98 @@
+header {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 10px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+header > nav {
+  background-color: rgba(246, 239, 172, 0.85) !important;
+}
+
+header > div:nth-of-type(1) > nav > :nth-child(2) .logo_text {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header > div:nth-of-type(1) > nav, header > div:nth-of-type(1) > nav > :nth-child(2) {
+  background-color: white !important;
+}
+
+header > div:nth-of-type(1) > nav > :nth-child(1), .bg_menu, .nav_bar-primary::before {
+  display: none;
+}
+
+header > div:nth-of-type(1) > nav > :nth-child(2) {
+  box-shadow: none;
+}
+
+header .border_black_opacity-20 {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.uk-slideshow a.uk-position-cover > img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.bg_bar {
+  background-color: #f6efac;
+}
+
+.logo_bg {
+  width: 100px !important;
+}
+
+.logo_cht, .logo_eng {
+  width: auto !important;
+}
+
+.bg_bar form {
+  margin: 0 !important;
+}
+
+@media (min-width: 960px) {
+  header > div:nth-of-type(1) > nav > :nth-child(2) .logo_text {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header > div:nth-of-type(1) > nav {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+  header > div:nth-of-type(1) > nav > :nth-child(2) {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .logo_text .flex {
+    width: auto !important;
+  }
+  .logo_cht {
+    font-size: 1.7rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  body::before {
+    padding-top: 350px;
+  }
+  .logo_position-up .logo_bg {
+    margin-top: 0;
+  }
+  .logo_control .logo_text_control .logo_position-up,
+  .logo_control .logo_text_control .logo_position-up .logo_text .logo_bg {
+    min-height: 70px;
+  }
+  .logo_control .logo_text_control .logo_position-up .logo_text .logo_bg {
+    width: calc(70px*1.96);
+    max-width: inherit;
+    max-height: inherit;
+  }
+  .logo_text .flex {
+    margin-top: 15px;
+  }
+  .bg_bar {
+    padding: 10px 20px;
+  }
+}

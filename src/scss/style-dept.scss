@@ -1,0 +1,84 @@
+@import 'variables', 'colors-variables', 'color', 'mixin', 'functions';
+
+header {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 10px -1px rgba(0,0,0,.1) !important;
+}
+header>nav {
+  // background-color: $color-primary-lighter !important;
+  background-color: rgba($color-primary-lighter, 0.85) !important;
+  // background: rgba(255, 255, 255, 0.7) !important;
+}
+header>div:nth-of-type(1)>nav>:nth-child(2) .logo_text {justify-content: center;}
+header>div:nth-of-type(1)>nav, header>div:nth-of-type(1)>nav>:nth-child(2) {
+    // position: relative !important;
+    // background-color: #ffed47;
+    background-color: rgba(255, 255, 255, 1) !important;
+}
+header>div:nth-of-type(1)>nav>:nth-child(1), .bg_menu, .nav_bar-primary::before {
+  display: none;
+}
+header>div:nth-of-type(1)>nav>:nth-child(2) {
+  box-shadow: none;
+}
+header .border_black_opacity-20 {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+.uk-slideshow a.uk-position-cover>img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.bg_bar {background-color: $color-primary-lighter;}
+
+.logo_bg {width: 100px !important;}
+.logo_cht, .logo_eng {width: auto !important;}
+
+.bg_bar form {margin: 0 !important;}
+
+@media (min-width: 960px) {
+  // header>div:nth-of-type(1)>nav>div {background-color: transparent;}
+  header>div:nth-of-type(1)>nav>:nth-child(2) .logo_text {justify-content: center;}
+  header>div:nth-of-type(1)>nav {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+  header>div:nth-of-type(1)>nav>:nth-child(2) {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .logo_text .flex {width: auto !important;}
+  .logo_cht {font-size: 1.7rem !important;}
+  // [uk-slideshow] {margin-top: -128px}
+}
+@media (min-width: 1200px) {
+  body::before {
+    padding-top: 350px;
+  }
+
+  $h: 70px;
+  .logo_position-up .logo_bg {
+    margin-top: 0;
+  }
+
+  .logo_control .logo_text_control .logo_position-up,
+  .logo_control .logo_text_control .logo_position-up .logo_text .logo_bg {
+    min-height: $h
+  }
+
+  .logo_control .logo_text_control .logo_position-up .logo_text .logo_bg {
+    width: calc(#{$h}*1.96);
+    max-width: inherit;
+    max-height: inherit;
+  }
+
+  .logo_text .flex {margin-top: 15px;}
+
+  // [uk-slideshow] {margin-top: -158px}
+
+  .bg_bar {
+    padding: 10px 20px;
+  }
+}
+
+@media (min-width: 1500px) {
+}

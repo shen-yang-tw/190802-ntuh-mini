@@ -1,0 +1,181 @@
+.logo_bg {
+  background: url("../img/logo-ntuch.svg#svgView(preserveAspectRatio(xMinYMid))") left center no-repeat;
+  width: 60px !important;
+}
+
+footer .logo_bg {
+  background: url("../img/logo-ntuch.svg#svgView(preserveAspectRatio(xMinYMin))") left center no-repeat;
+}
+
+#footer::before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: calc(100% * 510 / 1920);
+  /* background photo Aspect Ratio: 408x1921 */
+  background: url("../img/index-ntuch-bg.png") left top no-repeat;
+  background-size: 100%;
+}
+
+#footer > :first-child {
+  background-color: #60b947;
+}
+
+#footer, footer {
+  background-color: transparent;
+}
+
+#footer, #footer *:not([class*=bg]):not([class*=btn]):not([class*=color_]):not([class*=text-]), #footer *:not([class*=bg]):not([class*=btn]):not([class*=color_]):not([class*=text-]) *:not([class*=bg]), footer, footer *:not([class*=bg]):not([class*=btn]):not([class*=color_]):not([class*=text-]), footer *:not([class*=bg]):not([class*=btn]):not([class*=color_]):not([class*=text-]) *:not([class*=bg]) {
+  color: #224319;
+}
+
+#footer *, #footer .uk-grid-divider > :not(.uk-first-column)::before, #footer.uk-grid-divider.uk-grid-stack > .uk-grid-margin::before, footer *, footer .uk-grid-divider > :not(.uk-first-column)::before, footer.uk-grid-divider.uk-grid-stack > .uk-grid-margin::before {
+  border-color: #224319;
+}
+
+footer a.hover\:color_black\! * {
+  color: black !important;
+}
+
+footer a.hover\:color_black\!:hover * {
+  color: white !important;
+}
+
+footer > :nth-child(2) > :nth-child(2) > :last-child {
+  width: auto !important;
+}
+
+footer > :nth-child(2) > :nth-child(2) > :last-child > div {
+  margin-right: 10px !important;
+}
+
+a#AZ {
+  color: #224319 !important;
+}
+
+header > nav {
+  background-color: #eeeeee !important;
+}
+
+header > div:nth-of-type(1) > nav, header > div:nth-of-type(1) > nav > :nth-child(2), #footer::before {
+  position: relative !important;
+}
+
+header > div:nth-of-type(1) > nav {
+  background-color: #f38020 !important;
+  color: #572a05;
+}
+
+header > div:nth-of-type(1) > nav > :first-child {
+  background-color: white !important;
+  color: #757575;
+}
+
+@media (max-width: 959px) {
+  header .uk-sticky > nav, header .uk-sticky.uk-active > nav {
+    border-bottom: 5px solid #f38020;
+  }
+}
+
+header div:nth-of-type(1) > nav > :nth-child(2) {
+  box-shadow: none;
+}
+
+#footer::before {
+  position: relative;
+  opacity: 1;
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+#slideshow ~ section > div > .uk-grid div > h4 {
+  background-color: #e9d839;
+  color: #655c0b;
+}
+
+#slideshow ~ section > div > .uk-grid div > h4 * {
+  color: #655c0b !important;
+}
+
+#slideshow ~ section > div > form:last-child,
+#slideshow ~ section > div > .uk-grid:nth-child(2) > :nth-child(2n+1) > a, footer > :first-child, .nav_bar-primary::before {
+  display: none !important;
+}
+
+header > div:nth-of-type(1) > nav {
+  background: -webkit-linear-gradient(top, #ff9933 60%, #f3800d 100%) !important;
+  background: linear-gradient(to bottom, #ff9933 60%, #f3800d 100%) !important;
+}
+
+.nav_bar a {
+  color: #663300 !important;
+}
+
+@media (min-width: 960px) {
+  .logo_bg {
+    width: 120px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .logo_position-up .logo_bg {
+    margin-top: 0;
+  }
+  .logo_control .logo_text_control .logo_position-up,
+  .logo_control .logo_text_control .logo_position-up .logo_text .logo_bg {
+    min-height: 70px;
+  }
+  .logo_control .logo_text_control .logo_position-up .logo_text .logo_bg {
+    width: calc(70px*1.96);
+    max-width: inherit;
+    max-height: inherit;
+  }
+  .logo_eng {
+    font-size: 0.87rem !important;
+  }
+}
+
+/* ----------- iPhone 4 and 4S ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .logo_bg {
+    background: url("../img/logo-ntuch.png") no-repeat left center;
+  }
+  footer .logo_bg {
+    background: url("../img/logo-ntuch.png") no-repeat left center;
+  }
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .logo_bg {
+    background: url("../img/logo-ntuch.png") no-repeat left center;
+  }
+  footer .logo_bg {
+    background: url("../img/logo-ntuch.png") no-repeat left center;
+  }
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .logo_bg {
+    background: url("../img/logo-ntuch.png") no-repeat left center;
+  }
+  footer .logo_bg {
+    background: url("../img/logo-ntuch.png") no-repeat left center;
+  }
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  .logo_bg {
+    background: url("../img/logo-ntuch.png") no-repeat left center;
+  }
+  footer .logo_bg {
+    background: url("../img/logo-ntuch.png") no-repeat left center;
+  }
+}

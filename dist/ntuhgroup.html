@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html class="text-m" lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <!-- Fix phone number style for MS Edge -->
+  <meta name="Designer&Developer" content="楊軒羽 Shen Yang | Graphic Web Designer & Front-end Developer | 前端設計工程師">
+  <title>Document</title>
+  <!-- uk:css -->
+  <link rel="stylesheet" href="../dist/libs/uikit.min.css">
+  <!-- endinject -->
+  <!-- tw:css -->
+  <link rel="stylesheet" href="../dist/libs/tailwind.min.css">
+  <!-- endinject -->
+  <!-- fa:css -->
+  <link rel="stylesheet" href="../dist/libs/fontawesome.min.css">
+  <!-- endinject -->
+  <!-- style1:css -->
+  <link rel="stylesheet" href="../dist/css/main.min.css">
+  <!-- endinject -->
+  <!-- style2:css -->
+  <link rel="stylesheet" href="../dist/css/colors.min.css">
+  <!-- endinject -->
+  <!-- style3:css -->
+  <link rel="stylesheet" href="../dist/css/style.min.css">
+  <!-- endinject -->
+  <!-- style4:css -->
+  <!-- endinject -->
+  <!-- style5:css -->
+  <!-- endinject -->
+  <!-- style6:css -->
+  <!-- endinject -->
+  <!-- head:js -->
+  <script src="../dist/libs/fittext.js"></script>
+  <script src="../dist/libs/uikit-icons.min.js"></script>
+  <script src="../dist/libs/uikit.min.js"></script>
+  <!-- endinject -->
+</head>
+
+<body id="top" class="relative" uk-height-viewport>
+  <div class="uk-cover-container" uk-height-viewport>
+    <img src="img/ntuhgroup-bg.jpg" alt="臺大醫院醫療體系" uk-cover>
+    <div class="gradient opacity-75 uk-position-cover"></div>
+    <div class="clouds"></div>
+    <img src="img/ntuhgroup-bg-tree.png" uk-cover>
+    <div class="shadow-md relative">
+      <div class="bg-white opacity-70 uk-position-cover"></div>
+      <h1 class="relative p-3 uk-flex-middle uk-flex-center uk-grid-small" uk-margin uk-grid>
+        <div class="min_width-1/4 min_width-1/6@s min_width-1/8@m min_width-1/10@l max_width-100 uk-width-auto"><img class="logo_group" src="img/logo-ntuh.svg" alt="Logo"></div>
+        <div class="text-base m:text-2xl text-black font-bold text-center">國立臺灣大學醫學院附設醫院<br class="uk-hidden@m"><span class="w-4 uk-visible@m"></span>醫療體系全球資訊網</div>
+      </h1>
+    </div>
+    <div class="pb-3 s:p-3 relative uk-container" uk-height-viewport="expand: true">
+      <h2 class="text_shadow-black py-3 text-base m:text-2xl text-white font-medium text-center">總院</h2>
+      <hr class="border-white mt-0">
+      <!-- <h2 class="text-black py-3 text-base m:text-2xl font-medium text-center">總院</h2>
+      <hr class="border-black mt-0"> -->
+      <div class="uk-flex uk-flex-center uk-grid-small uk-grid" uk-grid>
+        <div><a class="btn_primary m:px-5 l:px-6 m:text-lg l:text-xl font-medium uk-button uk-button-primary" href="http://59.120.40.123:81/ntuh/Index.action">中文版</a></div>
+        <div><a class="btn_primary m:px-5 l:px-6 m:text-lg l:text-xl font-medium uk-button uk-button-primary" href="http://59.120.40.123:81/ntuh/Welcome.action?I=en_US">English</a></div>
+        <div><a class="btn_primary m:px-5 l:px-6 m:text-lg l:text-xl font-medium uk-button uk-button-primary" href="http://59.120.40.123:81/ntuch/Index.action" target="_blank" title="另開視窗">兒童醫院</a></div>
+        <div><a class="btn_primary m:px-5 l:px-6 m:text-lg l:text-xl font-medium uk-button uk-button-primary" href="https://ntuch.ntuh.gov.tw/" target="_blank" title="另開視窗">兒童版</a></div>
+      </div>
+      <div class="h-2"></div>
+      <h2 class="text_shadow-black py-3 text-base m:text-2xl text-white font-medium text-center">醫療體系</h2>
+      <hr class="border-white mt-0">
+      <!-- <h2 class="text-black py-3 text-base m:text-2xl font-medium text-center">醫療體系</h2>
+      <hr class="border-black mt-0"> -->
+      <div class="uk-flex uk-flex-center uk-grid-small uk-grid" uk-grid>
+        <div><a class="btn_secondary m:px-5 l:px-6 m:text-lg l:text-xl font-medium uk-button uk-button-primary" href="#js" uk-toggle>金山分院</a></div>
+        <div id="js" class="uk-flex-top" uk-modal>
+          <div class="uk-modal-dialog uk-margin-auto-vertical">
+            <div class="uk-modal-body">提醒：將另開新視窗，連結至臺大醫院金山分院網站!</div>
+            <div class="uk-modal-footer uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">取消</button>
+              <button class="uk-button uk-button-primary uk-modal-close" onclick="window.open('https://www.js.ntuh.gov.tw')">確定</button>
+            </div>
+          </div>
+        </div>
+        <!-- uk-modal-confirm -->
+        <div><a class="btn_secondary m:px-5 l:px-6 m:text-lg l:text-xl font-medium uk-button uk-button-primary" href="#bh" uk-toggle>北護分院</a></div>
+        <div id="bh" class="uk-flex-top" uk-modal>
+          <div class="uk-modal-dialog uk-margin-auto-vertical">
+            <div class="uk-modal-body">提醒：將另開新視窗，連結至臺大醫院北護分院網站!</div>
+            <div class="uk-modal-footer uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">取消</button>
+              <button class="uk-button uk-button-primary uk-modal-close" onclick="window.open('https://www.bh.ntuh.gov.tw')">確定</button>
+            </div>
+          </div>
+        </div>
+        <!-- uk-modal-confirm -->
+        <div><a class="btn_secondary m:px-5 l:px-6 m:text-lg l:text-xl font-medium uk-button uk-button-primary" href="#hch" uk-toggle>新竹分院</a></div>
+        <div id="hch" class="uk-flex-top" uk-modal>
+          <div class="uk-modal-dialog uk-margin-auto-vertical">
+            <div class="uk-modal-body">提醒：將另開新視窗，連結至臺大醫院新竹分院網站!</div>
+            <div class="uk-modal-footer uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">取消</button>
+              <button class="uk-button uk-button-primary uk-modal-close" onclick="window.open('https://www.hch.gov.tw')">確定</button>
+            </div>
+          </div>
+        </div>
+        <!-- uk-modal-confirm -->
+        <!-- <div><a class="btn_secondary m:px-5 l:px-6 m:text-lg l:text-xl font-medium uk-button uk-button-primary" href="#" uk-toggle>竹東分院</a></div> -->
+        <div class="uk-inline">
+          <button class="btn_secondary m:px-5 l:px-6 m:text-lg l:text-xl font-medium uk-button uk-button-primary" type="button">竹東分院</button>
+          <div class="p-0 bg-transparent uk-position-z-index" uk-margin uk-dropdown="delay-hide:100">
+            <a class="btn_secondary-light m:px-5 l:px-6 m:text-lg l:text-xl font-medium uk-button uk-button-primary" href="#chut" uk-toggle>竹東分院</a>
+            <a class="btn_secondary-light m:px-5 l:px-6 m:text-lg l:text-xl font-medium uk-button uk-button-primary" href="#dongkenkon" uk-toggle>東健康中心</a>
+          </div>
+        </div>
+        <div id="chut" class="uk-flex-top" uk-modal>
+          <div class="uk-modal-dialog uk-margin-auto-vertical">
+            <div class="uk-modal-body">提醒：將另開新視窗，連結至臺大醫院竹東分院網站!</div>
+            <div class="uk-modal-footer uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">取消</button>
+              <button class="uk-button uk-button-primary uk-modal-close" onclick="window.open('http://www.chut.ntuh.gov.tw/CHUT')">確定</button>
+            </div>
+          </div>
+        </div>
+        <!-- uk-modal-confirm -->
+        <div id="dongkenkon" class="uk-flex-top" uk-modal>
+          <div class="uk-modal-dialog uk-margin-auto-vertical">
+            <div class="uk-modal-body">提醒：將另開新視窗，連結至臺大醫院東健康中心網站!</div>
+            <div class="uk-modal-footer uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">取消</button>
+              <button class="uk-button uk-button-primary uk-modal-close" onclick="window.open('http://dongkenkon.chut.ntuh.gov.tw')">確定</button>
+            </div>
+          </div>
+        </div>
+        <!-- uk-modal-confirm -->
+        <div><a class="btn_secondary m:px-5 l:px-6 m:text-lg l:text-xl font-medium uk-button uk-button-primary" href="#bih" uk-toggle>新竹生醫分院</a></div>
+        <div id="bih" class="uk-flex-top" uk-modal>
+          <div class="uk-modal-dialog uk-margin-auto-vertical">
+            <div class="uk-modal-body">提醒：將另開新視窗，連結至臺大醫院雲林分院網站!</div>
+            <div class="uk-modal-footer uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">取消</button>
+              <button class="uk-button uk-button-primary uk-modal-close" onclick="window.open('https://bih.hch.gov.tw/web/page/')">確定</button>
+            </div>
+          </div>
+        </div>
+        <!-- uk-modal-confirm -->
+        <div><a class="btn_secondary m:px-5 l:px-6 m:text-lg l:text-xl font-medium uk-button uk-button-primary" href="#ylh" uk-toggle>雲林分院</a></div>
+        <div id="ylh" class="uk-flex-top" uk-modal>
+          <div class="uk-modal-dialog uk-margin-auto-vertical">
+            <div class="uk-modal-body">提醒：將另開新視窗，連結至臺大醫院雲林分院網站!</div>
+            <div class="uk-modal-footer uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">取消</button>
+              <button class="uk-button uk-button-primary uk-modal-close" onclick="window.open('https://www.ylh.ntuh.gov.tw/newweb/')">確定</button>
+            </div>
+          </div>
+        </div>
+        <!-- uk-modal-confirm -->
+      </div>
+    </div>
+    <div class="p-3 relative uk-container">
+      <small class="border border-solid border-white p-2 text-white bg_black_opacity-70" uk-height-viewport="expand: true">醫療機構網際網路資訊管理辦法聲明：禁止任何網際網路服務業者轉錄本網路資訊之內容供人點閱。 但以網路搜尋或超連結方式，進入本醫療機構之網址（域）直接點閱者，不在此限。<a class="link_line text-white" href="#">隱私權保護及資訊安全政策</a></small>
+    </div>
+  </div>
+  <!-- inject:js -->
+  <script src="../dist/js/script.min.js"></script>
+  <!-- endinject -->
+</body>
+
+</html>
