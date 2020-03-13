@@ -81838,6 +81838,7 @@ address, dl, fieldset, figure, ol, p, pre, ul {
   visibility: visible;
 }
 
+/* purgecss ignore */
 .uk-slideshow .uk-light .uk-slidenav *, .uk-slideshow .uk-light .uk-slidenav:hover *, .uk-slider.uk-light .uk-slidenav:not([class*=-out]):hover *, .uk-slider .uk-light .uk-slidenav:not([class*=-out]):hover *, .uk-modal-dialog-lightbox .uk-lightbox-content {
   color: white !important;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5) !important;
