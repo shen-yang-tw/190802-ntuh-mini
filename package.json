@@ -8,6 +8,7 @@
   "url": "https://github.com/shen-yang-tw/Package-Gulp.git",
   "scripts": {
     "start": "gulp start",
+    "server": "gulp server",
     "build": "gulp build --production"
   },
   "dependencies": {
