@@ -18,7 +18,7 @@ body {
 }
 
 body * {
-  font-family: "微軟正黑體", "Microsoft JhengHei", "PingFang TC", "Heiti TC", "Microsoft YaHei", Helvetica, Arial, Verdana, sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
   line-height: 1.5;
 }
 

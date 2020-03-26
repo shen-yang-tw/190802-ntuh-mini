@@ -7,7 +7,7 @@ h6 {
   margin: 0;
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -21,7 +21,7 @@ h5>*,
 h6>*,
 h3>.font-normal {
   font-weight: bold !important;
-}
+} */
 
 .logo_bg {
   background: url('../img/logo-ntuh.svg#svgView(preserveAspectRatio(xMinYMid meet))') no-repeat left center;
